@@ -1,0 +1,1048 @@
+fileFormatVersion: 2
+guid: fc105b6702a82684a86e316560c17e3c
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fondo-maniana1_0
+    21300002: fondo-maniana1_1
+    21300004: fondo-maniana1_2
+    21300006: fondo-maniana1_3
+    21300008: fondo-maniana1_4
+    21300010: fondo-maniana1_5
+    21300012: fondo-maniana1_6
+    21300014: fondo-maniana1_7
+    21300016: fondo-maniana1_8
+    21300018: fondo-maniana1_9
+    21300020: fondo-maniana1_10
+    21300022: fondo-maniana1_11
+    21300024: fondo-maniana1_12
+    21300026: fondo-maniana1_13
+    21300028: fondo-maniana1_14
+    21300030: fondo-maniana1_15
+    21300032: fondo-maniana1_16
+    21300034: fondo-maniana1_17
+    21300036: fondo-maniana1_18
+    21300038: fondo-maniana1_19
+    21300040: fondo-maniana1_20
+    21300042: fondo-maniana1_21
+    21300044: fondo-maniana1_22
+    21300046: fondo-maniana1_23
+    21300048: fondo-maniana1_24
+    21300050: fondo-maniana1_25
+    21300052: fondo-maniana1_26
+    21300054: fondo-maniana1_27
+    21300056: fondo-maniana1_28
+    21300058: fondo-maniana1_29
+    21300060: fondo-maniana1_30
+    21300062: fondo-maniana1_31
+    21300064: fondo-maniana1_32
+    21300066: fondo-maniana1_33
+    21300068: fondo-maniana1_34
+    21300070: fondo-maniana1_35
+    21300072: fondo-maniana1_36
+    21300074: fondo-maniana1_37
+    21300076: fondo-maniana1_38
+    21300078: fondo-maniana1_39
+    21300080: fondo-maniana1_40
+    21300082: fondo-maniana1_41
+    21300084: fondo-maniana1_42
+    21300086: fondo-maniana1_43
+    21300088: fondo-maniana1_44
+    21300090: fondo-maniana1_45
+    21300092: fondo-maniana1_46
+    21300094: fondo-maniana1_47
+    21300096: fondo-maniana1_48
+    21300098: fondo-maniana1_49
+    21300100: fondo-maniana1_50
+    21300102: fondo-maniana1_51
+    21300104: fondo-maniana1_52
+    21300106: fondo-maniana1_53
+    21300108: fondo-maniana1_54
+    21300110: fondo-maniana1_55
+    21300112: fondo-maniana1_56
+    21300114: fondo-maniana1_57
+    21300116: fondo-maniana1_58
+    21300118: fondo-maniana1_59
+    21300120: fondo-maniana1_60
+    21300122: fondo-maniana1_61
+    21300124: fondo-maniana1_62
+    21300126: fondo-maniana1_63
+    21300128: fondo-maniana1_64
+    21300130: fondo-maniana1_65
+    21300132: fondo-maniana1_66
+    21300134: fondo-maniana1_67
+    21300136: fondo-maniana1_68
+    21300138: fondo-maniana1_69
+    21300140: fondo-maniana1_70
+    21300142: fondo-maniana1_71
+    21300144: fondo-maniana1_72
+    21300146: fondo-maniana1_73
+    21300148: fondo-maniana1_74
+    21300150: fondo-maniana1_75
+    21300152: fondo-maniana1_76
+    21300154: fondo-maniana1_77
+    21300156: fondo-maniana1_78
+    21300158: fondo-maniana1_79
+    21300160: fondo-maniana1_80
+    21300162: fondo-maniana1_81
+    21300164: fondo-maniana1_82
+    21300166: fondo-maniana1_83
+    21300168: fondo-maniana1_84
+    21300170: fondo-maniana1_85
+    21300172: fondo-maniana1_86
+    21300174: fondo-maniana1_87
+    21300176: fondo-maniana1_88
+    21300178: fondo-maniana1_89
+    21300180: fondo-maniana1_90
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: fondo-maniana1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 7200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 7200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 7200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 7200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_5
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 7200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_6
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 7200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_8
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 6600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_9
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 6600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_10
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 6600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_11
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 6600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_12
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 6600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_13
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 6600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_15
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 6000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_16
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 6000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_17
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 6000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_18
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 6000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_19
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 6000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_20
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 6000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_22
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_23
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_24
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_25
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_26
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_27
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_29
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_30
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_31
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_32
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_33
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_34
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_36
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_37
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_38
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_39
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_40
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_41
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_43
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_44
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_45
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_46
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_47
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_48
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_50
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_51
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_52
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_53
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_54
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_55
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_57
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_58
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_59
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_60
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_61
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_62
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_64
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_65
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_66
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_67
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_68
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_69
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_71
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_72
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_73
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_74
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_75
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_76
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_78
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_79
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_80
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_81
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_82
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_83
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_85
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_86
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_87
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_88
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_89
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-maniana1_90
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

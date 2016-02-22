@@ -1,0 +1,1037 @@
+fileFormatVersion: 2
+guid: 0dd75120578be22409481cbd8f71c6e3
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: nubes2_0
+    21300002: nubes2_1
+    21300004: nubes2_2
+    21300006: nubes2_3
+    21300008: nubes2_4
+    21300010: nubes2_5
+    21300012: nubes2_6
+    21300014: nubes2_7
+    21300016: nubes2_8
+    21300018: nubes2_9
+    21300020: nubes2_10
+    21300022: nubes2_11
+    21300024: nubes2_12
+    21300026: nubes2_13
+    21300028: nubes2_14
+    21300030: nubes2_15
+    21300032: nubes2_16
+    21300034: nubes2_17
+    21300036: nubes2_18
+    21300038: nubes2_19
+    21300040: nubes2_20
+    21300042: nubes2_21
+    21300044: nubes2_22
+    21300046: nubes2_23
+    21300048: nubes2_24
+    21300050: nubes2_25
+    21300052: nubes2_26
+    21300054: nubes2_27
+    21300056: nubes2_28
+    21300058: nubes2_29
+    21300060: nubes2_30
+    21300062: nubes2_31
+    21300064: nubes2_32
+    21300066: nubes2_33
+    21300068: nubes2_34
+    21300070: nubes2_35
+    21300072: nubes2_36
+    21300074: nubes2_37
+    21300076: nubes2_38
+    21300078: nubes2_39
+    21300080: nubes2_40
+    21300082: nubes2_41
+    21300084: nubes2_42
+    21300086: nubes2_43
+    21300088: nubes2_44
+    21300090: nubes2_45
+    21300092: nubes2_46
+    21300094: nubes2_47
+    21300096: nubes2_48
+    21300098: nubes2_49
+    21300100: nubes2_50
+    21300102: nubes2_51
+    21300104: nubes2_52
+    21300106: nubes2_53
+    21300108: nubes2_54
+    21300110: nubes2_55
+    21300112: nubes2_56
+    21300114: nubes2_57
+    21300116: nubes2_58
+    21300118: nubes2_59
+    21300120: nubes2_60
+    21300122: nubes2_61
+    21300124: nubes2_62
+    21300126: nubes2_63
+    21300128: nubes2_64
+    21300130: nubes2_65
+    21300132: nubes2_66
+    21300134: nubes2_67
+    21300136: nubes2_68
+    21300138: nubes2_69
+    21300140: nubes2_70
+    21300142: nubes2_71
+    21300144: nubes2_72
+    21300146: nubes2_73
+    21300148: nubes2_74
+    21300150: nubes2_75
+    21300152: nubes2_76
+    21300154: nubes2_77
+    21300156: nubes2_78
+    21300158: nubes2_79
+    21300160: nubes2_80
+    21300162: nubes2_81
+    21300164: nubes2_82
+    21300166: nubes2_83
+    21300168: nubes2_84
+    21300170: nubes2_85
+    21300172: nubes2_86
+    21300174: nubes2_87
+    21300176: nubes2_88
+    21300178: nubes2_89
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: nubes2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_5
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_6
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_7
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_8
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_10
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_11
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_12
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_13
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_14
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_15
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_16
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_17
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_19
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_20
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_21
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_22
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_23
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_24
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_25
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_26
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_28
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_29
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_30
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_31
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_32
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_33
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_34
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_35
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_37
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_38
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_39
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_40
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_41
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_42
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_43
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_44
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_46
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_47
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_48
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_49
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_50
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_51
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_52
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_53
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_55
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_56
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_57
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_58
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_59
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_60
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_61
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_62
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_64
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_65
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_66
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_67
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_68
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_69
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_70
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_71
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_73
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_74
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_75
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_76
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_77
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_78
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_79
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_80
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_82
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_83
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_84
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_85
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_86
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_87
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_88
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nubes2_89
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

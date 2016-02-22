@@ -1,0 +1,1037 @@
+fileFormatVersion: 2
+guid: 95f091a9e8e172a48b57f3d0c4b57fe3
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: futbol-papelitos1_0
+    21300002: futbol-papelitos1_1
+    21300004: futbol-papelitos1_2
+    21300006: futbol-papelitos1_3
+    21300008: futbol-papelitos1_4
+    21300010: futbol-papelitos1_5
+    21300012: futbol-papelitos1_6
+    21300014: futbol-papelitos1_7
+    21300016: futbol-papelitos1_8
+    21300018: futbol-papelitos1_9
+    21300020: futbol-papelitos1_10
+    21300022: futbol-papelitos1_11
+    21300024: futbol-papelitos1_12
+    21300026: futbol-papelitos1_13
+    21300028: futbol-papelitos1_14
+    21300030: futbol-papelitos1_15
+    21300032: futbol-papelitos1_16
+    21300034: futbol-papelitos1_17
+    21300036: futbol-papelitos1_18
+    21300038: futbol-papelitos1_19
+    21300040: futbol-papelitos1_20
+    21300042: futbol-papelitos1_21
+    21300044: futbol-papelitos1_22
+    21300046: futbol-papelitos1_23
+    21300048: futbol-papelitos1_24
+    21300050: futbol-papelitos1_25
+    21300052: futbol-papelitos1_26
+    21300054: futbol-papelitos1_27
+    21300056: futbol-papelitos1_28
+    21300058: futbol-papelitos1_29
+    21300060: futbol-papelitos1_30
+    21300062: futbol-papelitos1_31
+    21300064: futbol-papelitos1_32
+    21300066: futbol-papelitos1_33
+    21300068: futbol-papelitos1_34
+    21300070: futbol-papelitos1_35
+    21300072: futbol-papelitos1_36
+    21300074: futbol-papelitos1_37
+    21300076: futbol-papelitos1_38
+    21300078: futbol-papelitos1_39
+    21300080: futbol-papelitos1_40
+    21300082: futbol-papelitos1_41
+    21300084: futbol-papelitos1_42
+    21300086: futbol-papelitos1_43
+    21300088: futbol-papelitos1_44
+    21300090: futbol-papelitos1_45
+    21300092: futbol-papelitos1_46
+    21300094: futbol-papelitos1_47
+    21300096: futbol-papelitos1_48
+    21300098: futbol-papelitos1_49
+    21300100: futbol-papelitos1_50
+    21300102: futbol-papelitos1_51
+    21300104: futbol-papelitos1_52
+    21300106: futbol-papelitos1_53
+    21300108: futbol-papelitos1_54
+    21300110: futbol-papelitos1_55
+    21300112: futbol-papelitos1_56
+    21300114: futbol-papelitos1_57
+    21300116: futbol-papelitos1_58
+    21300118: futbol-papelitos1_59
+    21300120: futbol-papelitos1_60
+    21300122: futbol-papelitos1_61
+    21300124: futbol-papelitos1_62
+    21300126: futbol-papelitos1_63
+    21300128: futbol-papelitos1_64
+    21300130: futbol-papelitos1_65
+    21300132: futbol-papelitos1_66
+    21300134: futbol-papelitos1_67
+    21300136: futbol-papelitos1_68
+    21300138: futbol-papelitos1_69
+    21300140: futbol-papelitos1_70
+    21300142: futbol-papelitos1_71
+    21300144: futbol-papelitos1_72
+    21300146: futbol-papelitos1_73
+    21300148: futbol-papelitos1_74
+    21300150: futbol-papelitos1_75
+    21300152: futbol-papelitos1_76
+    21300154: futbol-papelitos1_77
+    21300156: futbol-papelitos1_78
+    21300158: futbol-papelitos1_79
+    21300160: futbol-papelitos1_80
+    21300162: futbol-papelitos1_81
+    21300164: futbol-papelitos1_82
+    21300166: futbol-papelitos1_83
+    21300168: futbol-papelitos1_84
+    21300170: futbol-papelitos1_85
+    21300172: futbol-papelitos1_86
+    21300174: futbol-papelitos1_87
+    21300176: futbol-papelitos1_88
+    21300178: futbol-papelitos1_89
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: futbol-papelitos1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_5
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_6
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_7
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_8
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_10
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_11
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_12
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_13
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_14
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_15
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_16
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_17
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_19
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_20
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_21
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_22
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_23
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_24
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_25
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_26
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_28
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_29
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_30
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_31
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_32
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_33
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_34
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_35
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_37
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_38
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_39
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_40
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_41
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_42
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_43
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_44
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_46
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_47
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_48
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_49
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_50
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_51
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_52
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_53
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_55
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_56
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_57
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_58
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_59
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_60
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_61
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_62
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_64
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_65
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_66
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_67
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_68
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_69
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_70
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_71
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_73
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_74
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_75
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_76
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_77
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_78
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_79
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_80
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_82
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_83
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_84
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_85
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_86
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_87
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_88
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: futbol-papelitos1_89
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

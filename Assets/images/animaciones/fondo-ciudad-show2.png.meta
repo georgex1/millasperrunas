@@ -1,0 +1,1037 @@
+fileFormatVersion: 2
+guid: 4dc1c18544184334cb88bf8dd7a6d324
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fondo-ciudad-noche2_0
+    21300002: fondo-ciudad-noche2_1
+    21300004: fondo-ciudad-noche2_2
+    21300006: fondo-ciudad-noche2_3
+    21300008: fondo-ciudad-noche2_4
+    21300010: fondo-ciudad-noche2_5
+    21300012: fondo-ciudad-noche2_6
+    21300014: fondo-ciudad-noche2_7
+    21300016: fondo-ciudad-noche2_8
+    21300018: fondo-ciudad-noche2_9
+    21300020: fondo-ciudad-noche2_10
+    21300022: fondo-ciudad-noche2_11
+    21300024: fondo-ciudad-noche2_12
+    21300026: fondo-ciudad-noche2_13
+    21300028: fondo-ciudad-noche2_14
+    21300030: fondo-ciudad-noche2_15
+    21300032: fondo-ciudad-noche2_16
+    21300034: fondo-ciudad-noche2_17
+    21300036: fondo-ciudad-noche2_18
+    21300038: fondo-ciudad-noche2_19
+    21300040: fondo-ciudad-noche2_20
+    21300042: fondo-ciudad-noche2_21
+    21300044: fondo-ciudad-noche2_22
+    21300046: fondo-ciudad-noche2_23
+    21300048: fondo-ciudad-noche2_24
+    21300050: fondo-ciudad-noche2_25
+    21300052: fondo-ciudad-noche2_26
+    21300054: fondo-ciudad-noche2_27
+    21300056: fondo-ciudad-noche2_28
+    21300058: fondo-ciudad-noche2_29
+    21300060: fondo-ciudad-noche2_30
+    21300062: fondo-ciudad-noche2_31
+    21300064: fondo-ciudad-noche2_32
+    21300066: fondo-ciudad-noche2_33
+    21300068: fondo-ciudad-noche2_34
+    21300070: fondo-ciudad-noche2_35
+    21300072: fondo-ciudad-noche2_36
+    21300074: fondo-ciudad-noche2_37
+    21300076: fondo-ciudad-noche2_38
+    21300078: fondo-ciudad-noche2_39
+    21300080: fondo-ciudad-noche2_40
+    21300082: fondo-ciudad-noche2_41
+    21300084: fondo-ciudad-noche2_42
+    21300086: fondo-ciudad-noche2_43
+    21300088: fondo-ciudad-noche2_44
+    21300090: fondo-ciudad-noche2_45
+    21300092: fondo-ciudad-noche2_46
+    21300094: fondo-ciudad-noche2_47
+    21300096: fondo-ciudad-noche2_48
+    21300098: fondo-ciudad-noche2_49
+    21300100: fondo-ciudad-noche2_50
+    21300102: fondo-ciudad-noche2_51
+    21300104: fondo-ciudad-noche2_52
+    21300106: fondo-ciudad-noche2_53
+    21300108: fondo-ciudad-noche2_54
+    21300110: fondo-ciudad-noche2_55
+    21300112: fondo-ciudad-noche2_56
+    21300114: fondo-ciudad-noche2_57
+    21300116: fondo-ciudad-noche2_58
+    21300118: fondo-ciudad-noche2_59
+    21300120: fondo-ciudad-noche2_60
+    21300122: fondo-ciudad-noche2_61
+    21300124: fondo-ciudad-noche2_62
+    21300126: fondo-ciudad-noche2_63
+    21300128: fondo-ciudad-noche2_64
+    21300130: fondo-ciudad-noche2_65
+    21300132: fondo-ciudad-noche2_66
+    21300134: fondo-ciudad-noche2_67
+    21300136: fondo-ciudad-noche2_68
+    21300138: fondo-ciudad-noche2_69
+    21300140: fondo-ciudad-noche2_70
+    21300142: fondo-ciudad-noche2_71
+    21300144: fondo-ciudad-noche2_72
+    21300146: fondo-ciudad-noche2_73
+    21300148: fondo-ciudad-noche2_74
+    21300150: fondo-ciudad-noche2_75
+    21300152: fondo-ciudad-noche2_76
+    21300154: fondo-ciudad-noche2_77
+    21300156: fondo-ciudad-noche2_78
+    21300158: fondo-ciudad-noche2_79
+    21300160: fondo-ciudad-noche2_80
+    21300162: fondo-ciudad-noche2_81
+    21300164: fondo-ciudad-noche2_82
+    21300166: fondo-ciudad-noche2_83
+    21300168: fondo-ciudad-noche2_84
+    21300170: fondo-ciudad-noche2_85
+    21300172: fondo-ciudad-noche2_86
+    21300174: fondo-ciudad-noche2_87
+    21300176: fondo-ciudad-noche2_88
+    21300178: fondo-ciudad-noche2_89
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: fondo-ciudad-noche2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_5
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_6
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_7
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_8
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 5400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_10
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_11
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_12
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_13
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_14
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_15
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_16
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_17
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_19
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_20
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_21
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_22
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_23
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_24
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_25
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_26
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 4200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_28
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_29
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_30
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_31
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_32
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_33
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_34
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_35
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 3600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_37
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_38
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_39
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_40
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_41
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_42
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_43
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_44
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 3000
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_46
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_47
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_48
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_49
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_50
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_51
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_52
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_53
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 2400
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_55
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_56
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_57
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_58
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_59
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_60
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_61
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_62
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1800
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_64
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_65
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_66
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_67
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_68
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_69
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_70
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_71
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 1200
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_73
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_74
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_75
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_76
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_77
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_78
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_79
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_80
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 600
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_82
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_83
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_84
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_85
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_86
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_87
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_88
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fondo-ciudad-noche2_89
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 900
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

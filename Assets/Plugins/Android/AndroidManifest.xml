@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.unity3d.player" android:installLocation="preferExternal" android:theme="@android:style/Theme.NoTitleBar" android:versionCode="1" android:versionName="1.0">
+  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19" />
+  <!-- 
+      You could add android:largeHeap="true" to the <application> options to allow for more memory usage on some devices 
+      Google does not encourage this behaviour
+      please check http://developer.android.com/training/articles/memory.html
+      and optimize your Unity assets before you do
+  -->
+  <application android:icon="@drawable/app_icon" android:label="@string/app_name" android:debuggable="true">
+    <activity android:name="com.unity3d.player.UnityPlayerNativeActivity" android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+      <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
+    </activity>
+    
+    <activity android:name="com.unity3d.player.UnitySoftInputActivity" android:label="@string/app_name" android:screenOrientation="behind" android:windowSoftInputMode="stateAlwaysVisible|adjustPan">
+    </activity>
+    
+    <!-- You only need to add the activity to the manifest, please check the readme for more information -->
+    <!-- To remove the black background, use this line: -->
+    <activity android:name="com.ElicitIce.Plugin.ImagePicker" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+      <!-- To use the black background, use this line instead: -->
+      <!-- <activity android:name="com.ElicitIce.Plugin.ImagePicker" android:label="@string/app_name"> -->
+      <!-- remove the intent filters if you do not wish to add the ability to receive images from other apps -->
+      <!-- Remove Receiving Images -->
+      <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="image/*" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.SEND_MULTIPLE" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="image/*" />
+      </intent-filter>
+      <!-- End Remove Receiving Images-->
+      <!-- Remove Receiving Texts-->
+      <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.SEND_MULTIPLE" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+      </intent-filter>
+      <!-- End Remove Receiving Texts-->
+    </activity>
+    <!-- For Sharing from the private files, alternatively you can save files to a public folder like the gallery in example 5-->
+    <!-- 
+              TO AVOID AUTHORITY COLLISION PREVENTING INSTALL:
+              RENAME THE FILEPROVIDER AUTHORITY
+              
+              sorry there is no other workaround 
+              simply change:
+              android:authorities="com.ElicitIce.ImagePickerExample.fileprovider"
+              
+              to:
+              android:authorities="<YOUR PACKAGE NAME>.fileprovider"
+    -->
+    <provider android:name="com.ElicitIce.Plugin.FileProvider" android:authorities="com.ElicitIce.ImagePickerExample.fileprovider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/sharepaths" />
+    </provider>
+    <!-- end of provider -->
+    <activity android:name="com.facebook.unity.FBUnityLoginActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+    </activity>
+    <activity android:name="com.facebook.unity.FBUnityDialogsActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+    </activity>
+    <activity android:name="com.facebook.LoginActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+    </activity>
+    <activity android:name="com.facebook.unity.FBUnityDeepLinkingActivity" android:exported="true">
+    </activity>
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="\ 1621183591472295" />
+
+  </application>
+  <!-- We only need Read permissions as of version 8, if the plugin runs into write permission errors, please send an e-mail to me detailing the device, android version and logcat -->
+  <!-- To add write permissions, you can delete the READ permission and enable: <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+  <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+  <!-- For sharing with other applications the plugin currently requires a copy of the file in a public location (like the gallery), which means we need write permissions on the SD card -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <!-- Seems to be completly OPTIONAL for all devices
+        Add these if you want to use the camera as well,
+        uses-feature with required="true" informs the playstore that your application DEMANDS a camera, and should not be offered on devices without one.
+    <uses-permission android:name="android.permission.CAMERA" />    
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    -->
+</manifest>
