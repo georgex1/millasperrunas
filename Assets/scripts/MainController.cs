@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class MainController : MonoBehaviour {
 
-	public string appHash = "M11774Sp3RRun4A!";
+	public string appHash = "M11774Sp3RRun4A2!";
 /*#if UNITY_EDITOR
 	private string responseURL = "http://local.betterpixel.com/millasperrunas/response/response.php";
 	private string responseAssets = "http://local.betterpixel.com/millasperrunas/response/assets/images/perros/";
@@ -37,6 +37,7 @@ public class MainController : MonoBehaviour {
 	public string puntosEspecialesMotivoId;
 	public int paseoPerroId = 0;
 	public bool paseoPhotoTaked = false;
+	public bool gpsRunning = true;
 
 	//variables para popup en paseo de seguir paseando
 	/*public float ultLat = 0f;
@@ -206,7 +207,7 @@ public class MainController : MonoBehaviour {
 
 		Uid = "";
 //#if UNITY_EDITOR
-		isDebug = true;
+		isDebug = false;
 //#endif
 		checkUpdate = true;
 		loadTime = 0;
@@ -409,7 +410,7 @@ public class MainController : MonoBehaviour {
 			string Wcontent_ = MiniJSON.Json.Serialize(Wresponse["content"]);
 			string WarrayData_ = MiniJSON.Json.Serialize(Wresponse["arrayData"]);
 
-			//Debug.Log("WWW content: " + Wcontent_);
+			Debug.Log("WWW content: " + Wcontent_);
 
 			IDictionary Wresponse2 = (IDictionary) MiniJSON.Json.Deserialize ( Wcontent_ );
 			IDictionary Wresponse3 = (IDictionary) MiniJSON.Json.Deserialize ( WarrayData_ );

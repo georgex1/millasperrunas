@@ -13,6 +13,7 @@ public class paseo : MonoBehaviour {
 	public GameObject textPuntos;
 	public GameObject textKm;
 	public GameObject perro_bck;
+	public GameObject GPSSignal;
 
 	private Text textTime_;
 	private Text textPuntos_;
@@ -120,44 +121,49 @@ public class paseo : MonoBehaviour {
 		GMS.puntosCalc = GMS.puntosCalcDefault;
 		GMS.puntosEspecialesMotivoId = "0";
 
-		ArrayList result = GMS.db.BasicQueryArray ("select puntos, motivos_id from puntos_especiales where fecha_desde > '"+GMS.getActualDate()+"' and fecha_hasta < '"+GMS.getActualDate()+"' and habilitado = '1' ");
+		ArrayList result = GMS.db.BasicQueryArray ("select puntos, motivos_id from puntos_especiales where fecha_desde < '"+GMS.getActualDate()+"' and fecha_hasta > '"+GMS.getActualDate()+"' and habilitado = '1' ");
 		if (result.Count > 0) {
+			foreach (string[] row_ in result) {
 
-			//comprobar por tipo de puntos especiales la hora, clima, etc
-			if(((string[])result [0]) [1] == "1"){//noche
-				if( int.Parse( GMS.getHour() ) > 17 && int.Parse( GMS.getHour() ) < 6 ){
-					GMS.puntosCalc = float.Parse (((string[])result [0]) [0]);
-					GMS.puntosEspecialesMotivoId = ((string[])result [0]) [1];
+				Debug.Log ("hay puntos especiales");
+
+				//comprobar por tipo de puntos especiales la hora, clima, etc
+				if(((string[])row_) [1] == "1"){//noche
+					if( int.Parse( GMS.getHour() ) > 17 && int.Parse( GMS.getHour() ) < 6 ){
+						GMS.puntosCalc = float.Parse (((string[])row_) [0]);
+						GMS.puntosEspecialesMotivoId = ((string[])row_) [1];
+					}
+				}else if(((string[])row_) [1] == "3"){//frio
+					if( int.Parse( GMS.clima_temperatura ) < 17 ){
+						GMS.puntosCalc = float.Parse (((string[])row_) [0]);
+						GMS.puntosEspecialesMotivoId = ((string[])row_) [1];
+					}
+				}else if(((string[])row_) [1] == "4"){//temprano
+					if( int.Parse( GMS.getHour() ) > 5 && int.Parse( GMS.getHour() ) < 12 ){
+						GMS.puntosCalc = float.Parse (((string[])row_) [0]);
+						GMS.puntosEspecialesMotivoId = ((string[])row_) [1];
+					}
+				}else if(((string[])row_) [1] == "5"){//lluvia
+					if( GMS.clima_condicion == "showers" || GMS.clima_condicion == "freezing rain" || GMS.clima_condicion == "mixed rain and sleet" || 
+					   GMS.clima_condicion == "thunderstorms" || GMS.clima_condicion ==  "tropical storm" || GMS.clima_condicion == "mixed rain and hail" ){
+						GMS.puntosCalc = float.Parse (((string[])row_) [0]);
+						GMS.puntosEspecialesMotivoId = ((string[])row_) [1];
+					}
+				}else{
+					GMS.puntosCalc = float.Parse (((string[])row_) [0]);
+					GMS.puntosEspecialesMotivoId = ((string[])row_) [1];
 				}
-			}else if(((string[])result [0]) [1] == "3"){//frio
-				if( int.Parse( GMS.clima_temperatura ) < 17 ){
-					GMS.puntosCalc = float.Parse (((string[])result [0]) [0]);
-					GMS.puntosEspecialesMotivoId = ((string[])result [0]) [1];
+
+				if( ((string[])row_) [1] == "2" || ((string[])row_) [1] == "6" ){//show o futbol
+					GMS.checkBadget(1);
 				}
-			}else if(((string[])result [0]) [1] == "4"){//temprano
-				if( int.Parse( GMS.getHour() ) > 5 && int.Parse( GMS.getHour() ) < 12 ){
-					GMS.puntosCalc = float.Parse (((string[])result [0]) [0]);
-					GMS.puntosEspecialesMotivoId = ((string[])result [0]) [1];
-				}
-			}else if(((string[])result [0]) [1] == "5"){//lluvia
-				if( GMS.clima_condicion == "showers" || GMS.clima_condicion == "freezing rain" || GMS.clima_condicion == "mixed rain and sleet" || 
-				   GMS.clima_condicion == "thunderstorms" || GMS.clima_condicion ==  "tropical storm" || GMS.clima_condicion == "mixed rain and hail" ){
-					GMS.puntosCalc = float.Parse (((string[])result [0]) [0]);
-					GMS.puntosEspecialesMotivoId = ((string[])result [0]) [1];
-				}
-			}else{
-				GMS.puntosCalc = float.Parse (((string[])result [0]) [0]);
-				GMS.puntosEspecialesMotivoId = ((string[])result [0]) [1];
 			}
-
-			if( ((string[])result [0]) [1] == "2" || ((string[])result [0]) [1] == "6" ){//show o futbol
-				GMS.checkBadget(1);
-			}
-
 		} /*else {
 
 		}*/
 		GMS.db.CloseDB();
+
+		Debug.Log ("puntos especiales: " + GMS.puntosEspecialesMotivoId);
 
 		if (GMS.gps_active) {
 			Debug.Log("en paseo... GPS esta activo");
@@ -177,6 +183,16 @@ public class paseo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		if (!GPSSignal.activeSelf && !GMS.gpsRunning) {
+			GPSSignal.SetActive(true);
+		}
+
+		if (GPSSignal.activeSelf && GMS.gpsRunning) {
+			GPSSignal.SetActive(false);
+		}
+
+
 
 		if ( GMS.paseoTime >= timeToPhoto && !GMS.paseoPhotoTaked ) {
 			GMS.paseoPhotoTaked = true;

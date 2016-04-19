@@ -7,27 +7,33 @@ public class notificacionPuntosExtra : MonoBehaviour {
 
 	private MainController GMS;
 
-	private string[] anims = new string[]{
+	/*private string[] anims = new string[]{
 		"PanelAnimNoche", "PanelAnimShow", "PanelAnimNieve", "PanelAnimManiana", "PanelAnimLluvia", "PanelAnimFutbol"
-	};
+	};*/
+	public GameObject PanelAnimNoche;
+	public GameObject PanelAnimShow;
+	public GameObject PanelAnimNieve;
+	public GameObject PanelAnimManiana;
+	public GameObject PanelAnimLluvia;
+	public GameObject PanelAnimFutbol;
+
 
 	// Use this for initialization
 	void Start () {
 
 		GameObject GM = GameObject.Find ("MainController");
 		GMS = GM.GetComponent<MainController>();
-
-		foreach (string anim_ in anims) {
+		/*foreach (string anim_ in anims) {
 			GameObject.Find (anim_).SetActive(false);
-		}
+		}*/
 
 		switch (GMS.puntosEspecialesMotivoId) {
-		case "1": GameObject.Find ("PanelAnimNoche").SetActive(true); break;
-		case "2": GameObject.Find ("PanelAnimShow").SetActive(true); break;
-		case "3": GameObject.Find ("PanelAnimNieve").SetActive(true); break;
-		case "4": GameObject.Find ("PanelAnimManiana").SetActive(true); break;
-		case "5": GameObject.Find ("PanelAnimLluvia").SetActive(true); break;
-		case "6": GameObject.Find ("PanelAnimFutbol").SetActive(true); break;
+		case "1": PanelAnimNoche.SetActive(true); break;
+		case "2": PanelAnimShow.SetActive(true); break;
+		case "3": PanelAnimNieve.SetActive(true); break;
+		case "4": PanelAnimManiana.SetActive(true); break;
+		case "5": PanelAnimLluvia.SetActive(true); break;
+		case "6": PanelAnimFutbol.SetActive(true); break;
 		}
 
 	}

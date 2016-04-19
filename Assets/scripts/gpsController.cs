@@ -393,9 +393,9 @@ public class gpsController : MonoBehaviour
 								
 							GMS.db.OpenDB ("millasperrunas.db");
 								
-							sumPuntosPaseo = Math.Round (sumPuntosPaseo + (sumDistanceAct * GMS.puntosCalc));
+							sumPuntosPaseo = Math.Round (sumPuntosPaseo + (getDistance * GMS.puntosCalc));
 								
-							GMS.gps_calcPuntos = Math.Round (GMS.gps_calcPuntos + (sumDistanceAct * GMS.puntosCalc));
+							GMS.gps_calcPuntos = Math.Round (GMS.gps_calcPuntos + (getDistance * GMS.puntosCalc));
 								
 							Debug.Log (" calcPuntos : " + GMS.gps_calcPuntos);
 								
@@ -503,6 +503,7 @@ public class gpsController : MonoBehaviour
 		if (isStart && GMS.paseando && IsSetAntVars) {
 			#if !UNITY_EDITOR
 			if (Input.location.status == LocationServiceStatus.Running) {
+				GMS.gpsRunning = true;
 				#endif
 				
 				GMS.paseoTime += Time.deltaTime;
@@ -527,9 +528,12 @@ public class gpsController : MonoBehaviour
 				}
 
 				#if !UNITY_EDITOR
+			}else{
+				GMS.gpsRunning = false;
 			}
 			#endif
 		}
+
 	}
 
 	void OnApplicationPause (bool isGamePause)
