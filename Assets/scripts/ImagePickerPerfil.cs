@@ -10,6 +10,8 @@ public class ImagePickerPerfil : MonoBehaviour {
 	public GameObject imageTexture;
 	
 	private MainController GMS;
+
+	public GameObject loadingF;
 	
 	internal void Start() {
 		
@@ -18,6 +20,7 @@ public class ImagePickerPerfil : MonoBehaviour {
 	}
 	
 	public void getImage(){
+		loadingF.SetActive (false);
 		#if UNITY_EDITOR
 		test_guardar();
 		#else
@@ -34,26 +37,8 @@ public class ImagePickerPerfil : MonoBehaviour {
 
 		GMS.userData.temp_img = GMS.generateId ().ToString () + ".png";
 		
-		StartCoroutine (GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.userData.temp_img, 'u'));
+		StartCoroutine (GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.userData.temp_img, 'u', true));
 		StartCoroutine (loadImage ());
-		
-		/*
-		Texture2D savedTexture = imageTexture.renderer.material.mainTexture as Texture2D;
-		Texture2D newTexture = new Texture2D(savedTexture.width, savedTexture.height, TextureFormat.ARGB32, false);
-		
-		newTexture.SetPixels(0,0, savedTexture.width, savedTexture.height, savedTexture.GetPixels());
-		newTexture.Apply();
-		
-		byte[] fileDataTS = newTexture.EncodeToPNG ();
-		
-		File.WriteAllBytes(Application.persistentDataPath + "/SavedScreen2.png", fileDataTS);
-		Debug.Log (Application.persistentDataPath + "/SavedScreen2.png");
-		
-		Debug.Log (savedTexture.width + "x" + savedTexture.height);
-		Sprite sprite = Sprite.Create (tex, new Rect(0,0, savedTexture.width, savedTexture.height), new Vector2(0f,0f));
-		
-		
-		GameObject.Find ("backImage").GetComponent<Image>().sprite = sprite;*/
 		
 	}
 
@@ -66,8 +51,14 @@ public class ImagePickerPerfil : MonoBehaviour {
 			imageTexture.renderer.material.mainTexture = image;
 		
 			GMS.userData.temp_img = GMS.generateId ().ToString () + ".png";
-		
-			StartCoroutine (GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.userData.temp_img, 'u'));
+
+			bool rotateLeft = false;
+
+			if (Input.deviceOrientation == DeviceOrientation.Portrait){
+				rotateLeft = true;
+			}
+
+			StartCoroutine (GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.userData.temp_img, 'u', rotateLeft));
 			StartCoroutine (loadImage ());
 		}
 	}

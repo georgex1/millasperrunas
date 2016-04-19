@@ -10,36 +10,48 @@ using UnityEngine.UI;
 
 public class MainController : MonoBehaviour {
 
-	private string appHash = "M11774Sp3RRun4A!";
-	//private string responseURL = "http://thepastoapps.com/proyectos/millasperrunas/response/response.php";
-	//private string responseAssets = "http://thepastoapps.com/proyectos/millasperrunas/response/assets/images/perros/";
-	private string responseURL = "http://localhost/betterpixel/millasperrunas/response/response.php";
-	private string responseAssets = "http://localhost/betterpixel/millasperrunas/response/assets/images/perros/";
-
+	public string appHash = "M11774Sp3RRun4A!";
+/*#if UNITY_EDITOR
+	private string responseURL = "http://local.betterpixel.com/millasperrunas/response/response.php";
+	private string responseAssets = "http://local.betterpixel.com/millasperrunas/response/assets/images/perros/";
+#else*/
+	public string responseURL = "http://thepastoapps.com/proyectos/millasperrunas/response/response.php";
+	private string responseAssets = "http://thepastoapps.com/proyectos/millasperrunas/response/assets/images/perros/";
+//#endif
 	private string Uid;
 
 	private float loadTime;
 	private bool closeApp;
 	private bool checkUpdate;
 
+	public string toRedirectLogin = "";
+
 	//variables para paseo
 	public float paseoTime;
 	public bool paseando;
 	public float puntosCalc;
 	public float puntosCalcDefault;
-	public float paseoKm;
+	//public float paseoKm;
+	public float partialTime = 1f;
 	public string idPaseo;
 	public string puntosEspecialesMotivoId;
 	public int paseoPerroId = 0;
+	public bool paseoPhotoTaked = false;
+
+	//variables para popup en paseo de seguir paseando
+	/*public float ultLat = 0f;
+	public float ultLng = 0f;*/
+	public int iddleTime = 0;
 
 	//GPS vars
-	public bool gps_active;
-	public float gps_calcPuntos;
+	public bool gps_active = false;
+	public double gps_calcPuntos;
 	public double gps_partialVeloc;
 	public int gps_displaySeconds;
 	public int gps_displayMinutes;
 	public int gps_displayHours;
-	public int gps_refreshGPS = 3;
+	public int gps_refreshGPS = 2;
+	public float debug_lng = 0f;
 
 	public dbAccess db ;
 
@@ -52,16 +64,26 @@ public class MainController : MonoBehaviour {
 	public bool checkingCon = false;
 
 	//para debug
-	public bool isDebug;
+	public bool isDebug = false;
 	public string sendDataDebug;
+	public string yahooDebug;
+
+	//menu
+	public string antScene = "home";
 
 	//notificaciones
 	public notifications notificationsScript;
+	public string appName;
 
 	//popup
 	public GameObject popup;
 	public GameObject popupText;
 	public GameObject popupButton;
+	private string errorChrs = "";
+
+	//QstPopup
+	public GameObject qstPopup;
+	public GameObject qstPopupText;
 
 	//loading
 	public GameObject loading;
@@ -85,6 +107,7 @@ public class MainController : MonoBehaviour {
 		if (isDebug) {
 			GUI.skin.label.fontSize = 20;
 			GUI.Label (new Rect (0, Screen.height * 0.775f, Screen.width, Screen.height * 0.05f), "DEBUG : " + sendDataDebug);
+			GUI.Label (new Rect (0, Screen.height * 0.800f, Screen.width, Screen.height * 0.05f), "Yahoo DEBUG : " + yahooDebug);
 		}
 	}
 
@@ -103,8 +126,8 @@ public class MainController : MonoBehaviour {
 		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT" };
 		db.CreateTable ("familia", cols, colTypes);
 
-		cols = new string[]{"id", "perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "puntos_semana", "aceptado"};
-		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT"};
+		cols = new string[]{"id", "perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "puntos_semana", "aceptado", "chat_group"};
+		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT"};
 		db.CreateTable ("perros_usuarios", cols, colTypes);
 
 		cols = new string[]{"id", "perros_id", "usuarios_id", "puntos", "kilometros", "fecha_entrada"};
@@ -123,8 +146,8 @@ public class MainController : MonoBehaviour {
 		colTypes = new string[]{"INT", "TEXT"};
 		db.CreateTable ("razas", cols, colTypes);
 
-		cols = new string[]{"id", "nombre", "descripcion", "orden", "habilitado", "serverupdate"};
-		colTypes = new string[]{"INT", "TEXT", "TEXT", "INT", "TEXT", "TEXT"};
+		cols = new string[]{"id", "nombre", "descripcion", "orden", "habilitado", "serverupdate", "imagen"};
+		colTypes = new string[]{"INT", "TEXT", "TEXT", "INT", "TEXT", "TEXT", "TEXT"};
 		db.CreateTable ("tips_paseo", cols, colTypes);
 
 		cols = new string[]{"id", "titulo", "descripcion", "plataforma", "visto", "tipo", "serverupdate", "perros_id"};
@@ -135,9 +158,13 @@ public class MainController : MonoBehaviour {
 		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT"};
 		db.CreateTable ("puntos_especiales", cols, colTypes);
 
-		cols = new string[]{"id", "fecha_entrada", "usuarios_id", "perros_id", "foto", "subida"};
-		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT"};
+		cols = new string[]{"id", "fecha_entrada", "usuarios_id", "perros_id", "foto", "subida", "paseos_id"};
+		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT"};
 		db.CreateTable ("fotos_paseo", cols, colTypes);
+
+		cols = new string[]{"id", "usuarios_id", "lat", "lng", "fecha", "perros_id"};
+		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT", "TEXT", "TEXT"};
+		db.CreateTable ("ultimo_recorrido", cols, colTypes);
 
 		cols = new string[]{"id", "func", "sfields", "svalues"};
 		colTypes = new string[]{"INT", "TEXT", "TEXT", "TEXT"};
@@ -146,22 +173,55 @@ public class MainController : MonoBehaviour {
 		db.CloseDB();
 	}
 
+	public void logout(){
+		db.OpenDB("millasperrunas.db");
+		db.BasicQueryInsert ( "drop table usuarios" );
+		db.BasicQueryInsert ( "drop table perros" );
+		db.BasicQueryInsert ( "drop table familia" );
+		db.BasicQueryInsert ( "drop table perros_usuarios" );
+		db.BasicQueryInsert ( "drop table paseos" );
+		db.BasicQueryInsert ( "drop table badges_usuarios" );
+		db.BasicQueryInsert ( "drop table tips_paseo" );
+		db.BasicQueryInsert ( "drop table notificaciones" );
+		db.BasicQueryInsert ( "drop table puntos_especiales" );
+		db.BasicQueryInsert ( "drop table fotos_paseo" );
+		db.BasicQueryInsert ( "drop table ultimo_recorrido" );
+		db.CloseDB();
+
+		//Application.LoadLevel ("login");
+		#if !UNITY_EDITOR
+		#if UNITY_ANDROID
+		Application.Quit();
+		#else
+		Application.LoadLevel ("login");
+		#endif
+		#endif
+
+
+
+	}
+
 	// Use this for initialization
 	void Start () {
 
 		Uid = "";
-		isDebug = false;
+//#if UNITY_EDITOR
+		isDebug = true;
+//#endif
 		checkUpdate = true;
 		loadTime = 0;
 		db = GetComponent<dbAccess>();
 		createDb ();
-		puntosCalc = 2;
-		puntosCalcDefault = 2;
+		appName = "Millas Perrunas";
+		puntosCalc = 1;
+		puntosCalcDefault = 1;
 
 		paseoTime = 0f;
 		paseando = false;
-		paseoKm = 0f;
+		//paseoKm = 0f;
 		puntosEspecialesMotivoId = "0";
+
+		toRedirectLogin = "home";
 
 		/*db.OpenDB("millasperrunas.db");
 		ArrayList result = db.BasicQueryArray ("select * from usuarios where fbid = 10207435825803946 ");
@@ -220,12 +280,14 @@ public class MainController : MonoBehaviour {
 	}
 
 	private IEnumerator get_clima(){
-		yield return new WaitForSeconds (4);
+		yield return new WaitForSeconds (3);
+
+		yahooDebug = "Obteniendo clima...";
 
 		if (haveInet) {
 			yahooWeather yahooWeather_ = new yahooWeather (init_lat, init_lng);
 			yahooWeather_.GetWeatherXml ();
-			Debug.Log ("CLIMA CONDICION: " + yahooWeather_.Condition + " TEMPERATURA: " + yahooWeather_.Temperature);
+			Debug.Log ("CLIMA CONDICION: " + yahooWeather_.Condition + " TEMPERATURA: " + yahooWeather_.Temperature + " VIENTO: " + yahooWeather_.WindSpeed);
 
 			clima_condicion = yahooWeather_.Condition;
 			clima_temperatura = yahooWeather_.Temperature;
@@ -235,12 +297,18 @@ public class MainController : MonoBehaviour {
 			PlayerPrefs.SetString("clima_condicion", clima_condicion);
 			PlayerPrefs.SetString("clima_viento", clima_viento);
 
+			yahooDebug = "CLIMA: temp: " + clima_temperatura + " | condicion: " + clima_condicion + " | viento: " + clima_viento ;
+
 		} else {
 			StartCoroutine (get_clima());
 		}
 	}
 	
 	void Awake () {
+		QualitySettings.vSyncCount = 0;
+		Application.targetFrameRate = 30;
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
 		DontDestroyOnLoad (transform.gameObject);
 	}
 	
@@ -333,7 +401,8 @@ public class MainController : MonoBehaviour {
 		// check for errors
 		if (www.error == null){
 			sendDataDebug = "WWW Ok!";
-			Debug.Log("WWW Ok!: " + www.text);
+			//Debug.Log("WWW Ok!: " + www.text);
+			//Debug.Log("response: " + response);
 
 			IDictionary Wresponse = (IDictionary) MiniJSON.Json.Deserialize (www.text);
 
@@ -351,6 +420,7 @@ public class MainController : MonoBehaviour {
 			}else{
 				
 				if(response == "save_perro"){
+					perro.id = int.Parse( (string)Wresponse2["insertId"] );
 					savePerro();
 					//Application.LoadLevel ("home-mascota");
 				}
@@ -365,20 +435,59 @@ public class MainController : MonoBehaviour {
 
 					userData.id = int.Parse( (string)Wresponse3["id"] );
 
-					saveUserData(true);
+					if( (string)Wresponse2["hasArray"] != "0" ){
+						string WarrayContent_ = MiniJSON.Json.Serialize(Wresponse["arrayContent"]);
+						IDictionary WresponseContent = (IDictionary) MiniJSON.Json.Deserialize ( WarrayContent_ );
+						
+						
+						for(int i = 1; i <= int.Parse( (string)Wresponse2["hasArray"] ); i++ ){
+							IDictionary reponseContent = (IDictionary) MiniJSON.Json.Deserialize ( (string)WresponseContent[i.ToString()]  );
+							
+							userData.email = (string)reponseContent["email"];
+							userData.nombre = (string)reponseContent["nombre"];
+							userData.sexo = (string)reponseContent["sexo"];
+							
+							userData.foto = (string)reponseContent["foto"];
+							
+							try_download_perro_imagen((string)reponseContent["foto"]);
+							
+							saveUserData(true);
+							
+							//upload_user_foto();
+							StartCoroutine( redirect("subir-foto", 3f) );
+							download_perros();
+							get_ultimo_recorrido();
+							
+						}
+					}
+
+					/*saveUserData(true);
 					Application.LoadLevel ("subir-foto");
 
-					download_perros();
+					download_perros();*/
 				}
+
 				if(response == "login_email"){
+
+					showLoading(true);
 
 					userData.id = int.Parse( (string)Wresponse3["id"] );
 					
 					//saveUserData(true);
 					populateUserData(Wresponse3);
-					Application.LoadLevel ("subir-foto");
+
+					Debug.Log("imagen: " + (string)Wresponse3["foto"]);
+
+					if((string)Wresponse3["foto"] != "" && (string)Wresponse3["foto"] != null ){
+						try_download_perro_imagen((string)Wresponse3["foto"]);
+						toRedirectLogin = "cargar-invitar";
+						StartCoroutine( redirect("initGPS", 3f) );
+					}else{
+						StartCoroutine( redirect("subir-foto", 3f) );
+					}
 
 					download_perros();
+					get_ultimo_recorrido();
 				}
 
 				if(response == "register"){
@@ -395,7 +504,7 @@ public class MainController : MonoBehaviour {
 					string WarrayContent_ = MiniJSON.Json.Serialize(Wresponse["arrayContent"]);
 					IDictionary WresponseContent = (IDictionary) MiniJSON.Json.Deserialize ( WarrayContent_ );
 					
-					Debug.Log((string)Wresponse2["hasArray"]);
+					//Debug.Log((string)Wresponse2["hasArray"]);
 					if( (string)Wresponse2["hasArray"] != "0" ){
 						for(int i = 1; i <= int.Parse( (string)Wresponse2["hasArray"] ); i++ ){
 							Debug.Log("posicion: " + i);
@@ -409,29 +518,43 @@ public class MainController : MonoBehaviour {
 							string[] colsVals = new string[]{ (string)reponseContent["id"], (string)reponseContent["nombre"], (string)reponseContent["edad"], (string)reponseContent["peso"], (string)reponseContent["razas_id"], (string)reponseContent["foto"] };
 							
 							db.InsertIgnoreInto("perros", cols, colsVals, (string)reponseContent["id"]);
+							db.CloseDB();
 
 							//intentar bajar imagen del perro
 							try_download_perro_imagen((string)reponseContent["foto"]);
 
 							//cargar perros_usuarios
-							ArrayList result = db.BasicQueryArray ("select perros_id from perros_usuarios where usuarios_id = '"+userData.id.ToString()+"' and perros_id = '"+(string)reponseContent["id"]+"' ");
+							db.OpenDB("millasperrunas.db");
+							ArrayList result = db.BasicQueryArray ("select id from perros_usuarios where usuarios_id = '"+userData.id.ToString()+"' and perros_id = '"+(string)reponseContent["id"]+"' ");
+							db.CloseDB();
+
 							if (result.Count == 0) {
-								cols = new string[]{"perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "aceptado"};
-								colsVals = new string[]{ (string)reponseContent["id"], userData.id.ToString(), (string)reponseContent["parentescos_id"], (string)reponseContent["puntos"], (string)reponseContent["kilometros"], (string)reponseContent["puntos_totales"], (string)reponseContent["aceptado"] };
-								
+								//Debug.Log("cargar perros_usuarios: " + (string)reponseContent["id"]);
+
+								string perrosUsuariosId = getPerrosUsuariosNewId ();
+								//string newId = generateId().ToString();
+
+								cols = new string[]{"id", "perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "aceptado", "chat_group"};
+								colsVals = new string[]{ perrosUsuariosId, (string)reponseContent["id"], userData.id.ToString(), (string)reponseContent["parentescos_id"], (string)reponseContent["puntos"], (string)reponseContent["kilometros"], (string)reponseContent["puntos_totales"], (string)reponseContent["aceptado"], (string)reponseContent["chat_group"] };
+
+								db.OpenDB("millasperrunas.db");
 								db.InsertIntoSpecific("perros_usuarios", cols, colsVals);
+								db.CloseDB();
 							}
 
 							if((string)reponseContent["invitado_por_usuarios_id"] != ""){
 								//ingresar notificacion de perro agregado
 								cols = new string[]{"id", "titulo", "descripcion", "plataforma", "visto", "tipo", "serverupdate", "perros_id"};
-								colsVals = new string[]{ generateId().ToString(), "Invitación para pasear a " + (string)reponseContent["nombre"], 
+								string newNotifId = getNotificacionesNewId();
+								colsVals = new string[]{ newNotifId, "Invitación para pasear a " + (string)reponseContent["nombre"], 
 									(string)reponseContent["usuario_nombre"] + " te invita a pasear a " + (string)reponseContent["nombre"], "Android", "0", "invitacion", getActualDate(), (string)reponseContent["id"] };
-								
+
+								db.OpenDB("millasperrunas.db");
 								db.InsertIntoSpecific("notificaciones", cols, colsVals);
+								db.CloseDB();
 							}
 
-							db.CloseDB();
+
 						}
 					}
 				}
@@ -439,6 +562,7 @@ public class MainController : MonoBehaviour {
 				if(response == "invitar"){
 					Application.LoadLevel ("invitar-gracias");
 				}
+
 				if(response == "upload_info"){
 					sendDataDebug = "imagen subida";
 				}
@@ -451,6 +575,7 @@ public class MainController : MonoBehaviour {
 					string[] colsUsuariosValues = new string[]{ userData.foto};
 
 					db.UpdateSingle("usuarios", "foto", userData.foto, "id" , userData.id.ToString());
+					db.UpdateSingle("familia", "foto", userData.foto, "id" , userData.id.ToString());
 
 					db.CloseDB();
 
@@ -480,28 +605,54 @@ public class MainController : MonoBehaviour {
 							//Debug.Log("posicion: " + i);
 							
 							IDictionary reponseContent = (IDictionary) MiniJSON.Json.Deserialize ( (string)WresponseContent[i.ToString()]  );
-							
-							db.OpenDB("millasperrunas.db");
+
+							/*db.OpenDB("millasperrunas.db");
+							ArrayList result = db.BasicQueryArray ("select id from perros_usuarios where perros_id = '"+(string)reponseContent["perros_id"]+"' and usuarios_id = '"+(string)reponseContent["usuarios_id"]+"' ");
+							db.CloseDB();
+
+							if (result.Count > 0) {}*/
 
 							//cargar familia
-							string[] cols = new string[]{"id", "email", "nombre", "foto" };
+							string[] cols = new string[]{"id", "email", "nombre", "foto"  };
 							string[] colsVals = new string[]{ (string)reponseContent["id"], (string)reponseContent["email"], 
 								(string)reponseContent["nombre"], (string)reponseContent["foto"] };
-							
+
+							db.OpenDB("millasperrunas.db");
 							db.InsertIgnoreInto("familia", cols, colsVals, (string)reponseContent["id"]);
+							db.CloseDB();
 
 							//insertar el perro al usuario
+							if((string)reponseContent["perros_id"] != ""){
 
-							cols = new string[]{ "perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "aceptado"};
-							colsVals = new string[]{ (string)reponseContent["perros_id"], (string)reponseContent["id"], 
-								(string)reponseContent["parentescos_id"], "0", "0", "0", "0"};
+								//verificar si ya esta el perro/usuario
+								db.OpenDB("millasperrunas.db");
+								ArrayList result = db.BasicQueryArray ("select id from perros_usuarios where usuarios_id = '"+(string)reponseContent["id"]+"' and perros_id = '"+(string)reponseContent["perros_id"]+"' ");
+								db.CloseDB();
+								
+								if (result.Count == 0) {
+									//generar id nuevo auto_incremental
 
-							db.InsertIntoSpecific("perros_usuarios", cols, colsVals);
+									string perrosUsuariosId = getPerrosUsuariosNewId ();
+									Debug.Log("nuevo id de perros_usuarios: " + perrosUsuariosId);
+									//string newId = generateId().ToString();
+
+									cols = new string[]{ "id", "perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "aceptado", "chat_group"};
+									colsVals = new string[]{ perrosUsuariosId, (string)reponseContent["perros_id"], (string)reponseContent["id"], 
+										(string)reponseContent["parentescos_id"], "0", "0", "0", (string)reponseContent["aceptado"], (string)reponseContent["chat_group"]};
+
+									//Debug.Log("perros_usaurios cargar: " + (string)reponseContent["perros_id"] + "|" + (string)reponseContent["id"] + "|" + (string)reponseContent["parentescos_id"]);
+
+									//Debug.Log("cargar perros_usuarios: " + (string)reponseContent["perros_id"]);
+									db.OpenDB("millasperrunas.db");
+									db.InsertIntoSpecific("perros_usuarios", cols, colsVals);
+									db.CloseDB();
+								}
+							}
 
 							//intentar bajar imagen del perro
 							try_download_perro_imagen((string)reponseContent["foto"]);
 							
-							db.CloseDB();
+
 						}
 					}
 				}
@@ -526,7 +677,9 @@ public class MainController : MonoBehaviour {
 
 								string[] cols = new string[]{ "puntos", "kilometros", "puntos_totales", "puntos_semana" };
 								string[] colsVals = new string[]{ (string)reponseContent["puntos"], (string)reponseContent["kilometros"], (string)reponseContent["puntos_totales"], (string)reponseContent["puntos_semana"] };
-								
+
+								//Debug.Log("update perros_usuarios puntos en id: " + ((string[])result [0]) [0] );
+
 								db.InsertIgnoreInto("perros_usuarios", cols, colsVals, ((string[])result [0]) [0]);
 							}
 							
@@ -535,6 +688,90 @@ public class MainController : MonoBehaviour {
 					}
 				}
 
+				if(response == "get_badges"){
+					string WarrayContent_ = MiniJSON.Json.Serialize(Wresponse["arrayContent"]);
+					IDictionary WresponseContent = (IDictionary) MiniJSON.Json.Deserialize ( WarrayContent_ );
+					
+					//Debug.Log((string)Wresponse2["hasArray"]);
+					if( (string)Wresponse2["hasArray"] != "0" ){
+						for(int i = 1; i <= int.Parse( (string)Wresponse2["hasArray"] ); i++ ){
+							//Debug.Log("posicion: " + i);
+							
+							IDictionary reponseContent = (IDictionary) MiniJSON.Json.Deserialize ( (string)WresponseContent[i.ToString()]  );
+							
+							db.OpenDB("millasperrunas.db");
+							ArrayList result = db.BasicQueryArray ("select id from badges_usuarios where perros_id = '"+(string)reponseContent["perros_id"]+"' and badges_id = '"+(string)reponseContent["badges_id"]+"' ");
+							db.CloseDB();
+
+							if (result.Count == 0) {
+
+								string generatedId = getBadgesUsuariosNewId();
+								
+								string[] cols = new string[]{ "id", "badges_id", "usuarios_id", "perros_id", "fecha_entrada" };
+								string[] colsVals = new string[]{ generatedId, (string)reponseContent["badges_id"], userData.id.ToString(), (string)reponseContent["perros_id"], (string)reponseContent["fecha_entrada"] };
+
+								//Debug.Log("update perros_usuarios puntos en id: " + ((string[])result [0]) [0] );
+
+								db.OpenDB("millasperrunas.db");
+								db.InsertIgnoreInto( "badges_usuarios", cols, colsVals, generatedId );
+								db.CloseDB();
+							}
+							
+
+						}
+					}
+				}
+
+
+				if(response == "get_ultimo_recorrido"){
+					string WarrayContent_ = MiniJSON.Json.Serialize(Wresponse["arrayContent"]);
+					IDictionary WresponseContent = (IDictionary) MiniJSON.Json.Deserialize ( WarrayContent_ );
+					
+					//Debug.Log((string)Wresponse2["hasArray"]);
+					if( (string)Wresponse2["hasArray"] != "0" ){
+						for(int i = 1; i <= int.Parse( (string)Wresponse2["hasArray"] ); i++ ){
+							//Debug.Log("posicion: " + i);
+
+							IDictionary reponseContent = (IDictionary) MiniJSON.Json.Deserialize ( (string)WresponseContent[i.ToString()]  );
+
+							string[] cols = new string[]{ "id", "usuarios_id", "lat", "lng", "fecha", "perros_id" };
+							string[] colsVals = new string[]{ (string)reponseContent["id"], (string)reponseContent["usuarios_id"], (string)reponseContent["lat"], (string)reponseContent["lng"], (string)reponseContent["fecha"], (string)reponseContent["perros_id"] };
+
+							db.OpenDB("millasperrunas.db");
+							db.InsertIgnoreInto( "ultimo_recorrido", cols, colsVals, (string)reponseContent["id"] );
+
+							db.CloseDB();
+
+						}
+					}
+				}
+
+				/*if(response == "check_aceptados"){
+					string WarrayContent_ = MiniJSON.Json.Serialize(Wresponse["arrayContent"]);
+					IDictionary WresponseContent = (IDictionary) MiniJSON.Json.Deserialize ( WarrayContent_ );
+					
+					//Debug.Log((string)Wresponse2["hasArray"]);
+					if( (string)Wresponse2["hasArray"] != "0" ){
+						for(int i = 1; i <= int.Parse( (string)Wresponse2["hasArray"] ); i++ ){
+
+							IDictionary reponseContent = (IDictionary) MiniJSON.Json.Deserialize ( (string)WresponseContent[i.ToString()]  );
+
+							db.OpenDB("millasperrunas.db");
+							ArrayList result = db.BasicQueryArray ("select id from perros_usuarios where perros_id = '"+(string)reponseContent["perros_id"]+"' and usuarios_id = '"+(string)reponseContent["usuarios_id"]+"' ");
+							db.CloseDB();
+							
+							if (result.Count > 0) {
+								string[] cols = new string[]{ "aceptado" };
+								string[] colsVals = new string[]{ (string)reponseContent["aceptado"] };
+								
+								db.OpenDB("millasperrunas.db");
+								db.InsertIgnoreInto( "perros_usuarios", cols, colsVals, ((string[])result [0]) [0] );
+								db.CloseDB();
+							}
+						}
+					}
+				}*/
+
 				if(response == "get_updates"){
 
 					//if((string)Wresponse2["mgs"] == "puntos_especiales_updated"){
@@ -542,7 +779,7 @@ public class MainController : MonoBehaviour {
 					string WarrayContent_ = MiniJSON.Json.Serialize(Wresponse["arrayContent"]);
 					IDictionary WresponseContent = (IDictionary) MiniJSON.Json.Deserialize ( WarrayContent_ );
 
-					Debug.Log((string)Wresponse2["hasArray"]);
+					//Debug.Log((string)Wresponse2["hasArray"]);
 					if( (string)Wresponse2["hasArray"] != "0" ){
 						for(int i = 1; i <= int.Parse( (string)Wresponse2["hasArray"] ); i++ ){
 							Debug.Log("posicion: " + i);
@@ -561,10 +798,12 @@ public class MainController : MonoBehaviour {
 							}
 
 							if((string)Wresponse2["mgs"] == "tips_paseo_updated"){
-								string[] colsUsuarios = new string[]{ "id", "nombre", "descripcion", "orden", "habilitado", "serverupdate"};
-								string[] colsUsuariosValues = new string[]{ (string)reponseContent["id"], (string)reponseContent["nombre"], (string)reponseContent["descripcion"], (string)reponseContent["orden"], (string)reponseContent["habilitado"], (string)reponseContent["serverupdate"] };
+								string[] colsUsuarios = new string[]{ "id", "nombre", "descripcion", "orden", "habilitado", "serverupdate", "imagen"};
+								string[] colsUsuariosValues = new string[]{ (string)reponseContent["id"], (string)reponseContent["nombre"], (string)reponseContent["descripcion"], (string)reponseContent["orden"], (string)reponseContent["habilitado"], (string)reponseContent["serverupdate"], (string)reponseContent["imagen"] };
 								
 								db.InsertIgnoreInto("tips_paseo", colsUsuarios, colsUsuariosValues, (string)reponseContent["id"]);
+
+								try_download_perro_imagen((string)reponseContent["imagen"]);
 							}
 
 							if((string)Wresponse2["mgs"] == "badges_updated"){
@@ -619,20 +858,77 @@ public class MainController : MonoBehaviour {
 		}
 	}
 
+	private IEnumerator redirect(string escene_, float seconds){
+		yield return new WaitForSeconds (seconds);
+		
+		Debug.Log ("redirect escene: " + escene_ + " en " + seconds);
+		showLoading(false);
+		Application.LoadLevel (escene_);
+	}
+
 	private void populateUserData(IDictionary values){
 		userData.email = (string)values["email"];
 		userData.nombre = (string)values["nombre"];
 		userData.fecha_nacimiento = (string)values["fecha_nacimiento"];
 		userData.sexo = (string)values["sexo"];
+		userData.foto = (string)values["foto"];
 
 		saveUserData (false);
+	}
+
+	private string getPerrosUsuariosNewId(){
+		db.OpenDB("millasperrunas.db");
+		ArrayList result = db.BasicQueryArray ("select id from perros_usuarios order by id DESC limit 1");
+		db.CloseDB();
+
+		string newId = "1";
+
+		if (result.Count > 0) {
+			newId = ((string[])result [0]) [0];
+			int newIdInt = int.Parse(newId)+1;
+			newId = newIdInt.ToString();
+		}
+
+		return newId;
+	}
+
+	private string getBadgesUsuariosNewId(){
+		db.OpenDB("millasperrunas.db");
+		ArrayList result = db.BasicQueryArray ("select id from badges_usuarios order by id DESC limit 1");
+		db.CloseDB();
+		
+		string newId = "1";
+		
+		if (result.Count > 0) {
+			newId = ((string[])result [0]) [0];
+			int newIdInt = int.Parse(newId)+1;
+			newId = newIdInt.ToString();
+		}
+		
+		return newId;
+	}
+
+	private string getNotificacionesNewId(){
+		db.OpenDB("millasperrunas.db");
+		ArrayList result = db.BasicQueryArray ("select id from notificaciones order by id DESC limit 1");
+		db.CloseDB();
+		
+		string newId = "1";
+		
+		if (result.Count > 0) {
+			newId = ((string[])result [0]) [0];
+			int newIdInt = int.Parse(newId)+1;
+			newId = newIdInt.ToString();
+		}
+		
+		return newId;
 	}
 
 	private void saveUserData(bool isfb){
 		sendDataDebug = "entro a saveUserData";
 		db.OpenDB("millasperrunas.db");
 		
-		string[] colsUsuarios = new string[]{ "id", "email", "nombre", "fbid", "fecha_nacimiento", "sexo"};
+		string[] colsUsuarios = new string[]{ "id", "email", "nombre", "fbid", "fecha_nacimiento", "sexo", "foto"};
 
 		ArrayList result = new ArrayList();
 		if (isfb) {
@@ -647,7 +943,7 @@ public class MainController : MonoBehaviour {
 
 
 		//ArrayList result = db.SingleSelectWhere ("usuarios", "*", "fbid", "=", userData.fbid  );
-		string[] colsUsuariosValues = new string[]{ userData.id.ToString(), userData.email, userData.nombre, userData.fbid, userData.fecha_nacimiento, userData.sexo };
+		string[] colsUsuariosValues = new string[]{ userData.id.ToString(), userData.email, userData.nombre, userData.fbid, userData.fecha_nacimiento, userData.sexo, userData.foto };
 		
 		if (result.Count == 0) {
 			sendDataDebug = "count = 0 inserto usuario";
@@ -663,7 +959,18 @@ public class MainController : MonoBehaviour {
 		db.CloseDB();
 	}
 
-	private void download_perros(){
+	public void updateUserData(){
+		string[] colsUsuarios = new string[]{ "id", "email", "nombre", "fbid", "fecha_nacimiento", "sexo"};
+		string[] colsUsuariosValues = new string[]{ userData.id.ToString(), userData.email, userData.nombre, userData.fbid, userData.fecha_nacimiento, userData.sexo };
+
+		db.OpenDB("millasperrunas.db");
+		db.InsertIgnoreInto("usuarios", colsUsuarios, colsUsuariosValues, userData.id.ToString() );
+		db.CloseDB ();
+
+		sendData (colsUsuarios, colsUsuariosValues, "updateUserData");
+	}
+
+	public void download_perros(){
 		if (userData.id != 0) {
 			string perros_list = "0";
 
@@ -676,7 +983,6 @@ public class MainController : MonoBehaviour {
 					perros_list += "," + row_[0];
 				}
 			}
-
 
 			string[] colsUsuarios = new string[]{ "usuarios_id", "lista_descargada" };
 			string[] colsUsuariosValues = new string[]{ userData.id.ToString (), perros_list };
@@ -720,9 +1026,35 @@ public class MainController : MonoBehaviour {
 		}
 	}
 
+	public void upload_recorrido(string google_recorrido, string image_name){
+		string[] cols = new string[]{ "google_recorrido", "image_name" };
+		string[] colsVals = new string[]{ google_recorrido, image_name };
+		
+		sendData (cols, colsVals, "upload_recorrido");
+	}
+
+	public string getShareImage(string image_){
+		return responseAssets + "recorridos/" + image_ + ".png";
+	}
+
+	/*public void upload_recorrido(string imagen_, byte[] fileData){
+		
+		Debug.Log ("try upload: imagen recorrido");
+		string[] cols2 = new string[]{ "fileUpload", "imagen"};
+		string[] data2 = new string[]{ "imagen_usuario", imagen_ };
+		try {
+			sendData (cols2, data2, "upload_recorrido", fileData);
+		} catch (IOException e) {
+			Debug.Log (e);
+		}
+	}*/
+
 	public int generateId(){
 		int timestamp = (int)Math.Truncate((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds);
 		return timestamp;
+		/*int randR = UnityEngine.Random.Range (0, 9);
+		string conctTr = timestamp.ToString () + randR.ToString ();
+		return int.Parse(conctTr);*/
 	}
 
 	public void register(){
@@ -742,11 +1074,14 @@ public class MainController : MonoBehaviour {
 	}
 
 	public void loginFacebook(){
+
+		userData.foto = userData.temp_img;
+		byte[] fileData = File.ReadAllBytes (Application.persistentDataPath + "/" + userData.foto);
 		
-		string[] colsUsuarios = new string[]{ "email", "nombre", "fbid", "fecha_nacimiento", "sexo", "plataforma", "regid"};
-		string[] colsUsuariosValues = new string[]{ userData.email, userData.nombre, userData.fbid, userData.fecha_nacimiento, userData.sexo, userData.plataforma, userData.reg_id };
+		string[] colsUsuarios = new string[]{ "email", "nombre", "fbid", "fecha_nacimiento", "sexo", "plataforma", "regid", "usuario_foto", "fileUpload"};
+		string[] colsUsuariosValues = new string[]{ userData.email, userData.nombre, userData.fbid, userData.fecha_nacimiento, userData.sexo, userData.plataforma, userData.reg_id, userData.foto, "imagen_usuario" };
 		
-		sendData (colsUsuarios, colsUsuariosValues, "login_facebook");
+		sendData (colsUsuarios, colsUsuariosValues, "login_facebook", fileData);
 	}
 
 	public void loginEmail(){
@@ -758,9 +1093,11 @@ public class MainController : MonoBehaviour {
 	}
 
 	public void registerPerro(){
-		perro.id = generateId ();
-		string[] cols = new string[]{ "id", "nombre", "edad", "peso", "razas_id", "parentescos_id", "usuarios_id"};
-		string[] colsValues = new string[]{ perro.id.ToString(), perro.nombre, perro.edad, perro.peso, perro.razas_id, perro.parentescos_id, userData.id.ToString() };
+		//perro.id = generateId ();
+		perro.chat_group = generateId ().ToString();
+
+		string[] cols = new string[]{  "nombre", "edad", "peso", "razas_id", "parentescos_id", "usuarios_id", "chat_group"};
+		string[] colsValues = new string[]{   perro.nombre, perro.edad, perro.peso, perro.razas_id, perro.parentescos_id, userData.id.ToString(), perro.chat_group };
 		sendData (cols, colsValues, "save_perro");
 	}
 
@@ -771,14 +1108,17 @@ public class MainController : MonoBehaviour {
 		string[] colsValues = new string[]{ perro.id.ToString(), perro.nombre, perro.edad, perro.peso, perro.razas_id, perro.foto };
 
 		db.InsertIntoSpecific ("perros", cols, colsValues);
-
-
-		cols = new string[]{ "perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "aceptado"};
-		colsValues = new string[]{ perro.id.ToString(), userData.id.ToString(), perro.parentescos_id, "0", "0", "0", "1" };
-		
-		db.InsertIntoSpecific ("perros_usuarios", cols, colsValues);
-
 		db.CloseDB();
+
+		string perrosUsuariosId = getPerrosUsuariosNewId ();
+
+		cols = new string[]{ "id", "perros_id", "usuarios_id", "parentescos_id", "puntos", "kilometros", "puntos_totales", "aceptado", "chat_group"};
+		colsValues = new string[]{ perrosUsuariosId, perro.id.ToString(), userData.id.ToString(), perro.parentescos_id, "0", "0", "0", "1", perro.chat_group };
+
+		db.OpenDB("millasperrunas.db");
+		db.InsertIntoSpecific ("perros_usuarios", cols, colsValues);
+		db.CloseDB();
+
 		
 		//subir imagen
 		byte[] fileData = File.ReadAllBytes( Application.persistentDataPath + "/" + perro.foto );
@@ -803,13 +1143,37 @@ public class MainController : MonoBehaviour {
 		call_updates ("notificaciones");
 		call_updates ("badges");
 		get_familiares ();
+		get_badges ();
+		//get_perros_familiares ();
 		get_familiares_puntos ();
 		download_perros();
 
 		StartCoroutine (get_updates ());
 	}
 
-	public void get_familiares(){
+	/*public void get_perros_familiares(){
+		if (userData.id != 0) {
+			string perros_usuarios_list = "0-0";
+			
+			db.OpenDB("millasperrunas.db");
+			ArrayList result = db.BasicQueryArray ("select perros_id, usuarios_id from perros_usuarios where usuarios_id <> '"+userData.id+"'");
+			db.CloseDB();
+			
+			if (result.Count > 0) {
+				foreach (string[] row_ in result) {
+					perros_usuarios_list += "," + row_[0] + "-" + row_[1];
+				}
+			}
+			db.CloseDB();
+			
+			string[] colsUsuarios = new string[]{ "usuarios_id", "perros_usuarios_list"  };
+			string[] colsUsuariosValues = new string[]{ userData.id.ToString (), perros_usuarios_list  };
+			
+			sendData (colsUsuarios, colsUsuariosValues, "get_perros_familiares");
+		}
+	}*/
+
+	/*public void get_familiares3(){
 		if (userData.id != 0) {
 			string perros_list = "0";
 			
@@ -840,6 +1204,69 @@ public class MainController : MonoBehaviour {
 			
 			sendData (colsUsuarios, colsUsuariosValues, "get_familiares");
 		}
+	}*/
+
+	public void get_familiares(){
+
+		if (userData.id != 0) {
+			string perros_usuarios_list = "'0-0'";
+			
+			db.OpenDB("millasperrunas.db");
+			ArrayList result = db.BasicQueryArray ("select perros_id, usuarios_id from perros_usuarios ");
+
+			
+			if (result.Count > 0) {
+				foreach (string[] row_ in result) {
+					perros_usuarios_list += ",'" + row_[0] + "-" + row_[1] + "'";
+				}
+			}
+
+			string perros_list = "0";
+
+			result = db.BasicQueryArray ("select id from perros");
+			db.CloseDB();
+			
+			if (result.Count > 0) {
+				foreach (string[] row_ in result) {
+					perros_list += "," + row_[0];
+				}
+			}
+
+			string[] colsUsuarios = new string[]{ "usuarios_id", "perros_usuarios_list", "perros_list" };
+			string[] colsUsuariosValues = new string[]{ userData.id.ToString (), perros_usuarios_list, perros_list };
+			
+			sendData (colsUsuarios, colsUsuariosValues, "get_familiares");
+		}
+	}
+
+	public void get_badges(){
+		if (userData.id != 0) {
+
+			db.OpenDB("millasperrunas.db");
+			
+			string badges_perros_list = "'0-0'";
+			
+			ArrayList result = db.BasicQueryArray ("select badges_id, perros_id from badges_usuarios");
+			db.CloseDB();
+
+			if (result.Count > 0) {
+				foreach (string[] row_ in result) {
+					badges_perros_list += ",'" + row_[0] + "-" + row_[1] + "'";
+				}
+			}
+			
+			string[] colsUsuarios = new string[]{ "usuarios_id", "badges_perros_list" };
+			string[] colsUsuariosValues = new string[]{ userData.id.ToString (), badges_perros_list };
+			
+			sendData (colsUsuarios, colsUsuariosValues, "get_badges");
+		}
+	}
+
+	private void get_ultimo_recorrido(){
+		string[] colsUsuarios = new string[]{ "usuarios_id" };
+		string[] colsUsuariosValues = new string[]{ userData.id.ToString () };
+		
+		sendData (colsUsuarios, colsUsuariosValues, "get_ultimo_recorrido");
 	}
 
 	public void get_familiares_puntos(){
@@ -882,12 +1309,12 @@ public class MainController : MonoBehaviour {
 	}
 
 	private IEnumerator call_sync(){
-		yield return new WaitForSeconds (4);
+		yield return new WaitForSeconds (2);
 		sync ();
 	}
 
 	public void sync(){
-		Debug.Log ("sync....");
+		//Debug.Log ("sync....");
 		//sync foto perro
 		db.OpenDB("millasperrunas.db");
 		ArrayList result = db.BasicQueryArray ("select * from fotos_paseo where subida = '0' limit 1");
@@ -915,19 +1342,34 @@ public class MainController : MonoBehaviour {
 
 	public void insert_sync(string[] fields, string[] values, string sync_func){
 
-		db.OpenDB ("millasperrunas.db");
-
 		string fields_json = MiniJSON.Json.Serialize(fields);
 		string values_json = MiniJSON.Json.Serialize(values);
 
 		//Debug.Log ("insertar en sync fields: " + fields_json + "values: " + values_json + " func: " + sync_func);
+		string newSyncId = getSyncNewId ();
 
 		string[] colsF = new string[]{ "id", "func", "sfields", "svalues"};
-		string[] colsV = new string[]{ generateId().ToString(), sync_func, fields_json, values_json };
-		
-		db.InsertIntoSpecific("sync", colsF, colsV);
+		string[] colsV = new string[]{ newSyncId, sync_func, fields_json, values_json };
 
+		db.OpenDB ("millasperrunas.db");
+		db.InsertIntoSpecific("sync", colsF, colsV);
 		db.CloseDB ();
+	}
+
+	private string getSyncNewId(){
+		db.OpenDB("millasperrunas.db");
+		ArrayList result = db.BasicQueryArray ("select id from sync order by id DESC limit 1");
+		db.CloseDB();
+		
+		string newId = "1";
+		
+		if (result.Count > 0) {
+			newId = ((string[])result [0]) [0];
+			int newIdInt = int.Parse(newId)+1;
+			newId = newIdInt.ToString();
+		}
+		
+		return newId;
 	}
 	
 	public void upload_foto_paseo(){
@@ -935,14 +1377,15 @@ public class MainController : MonoBehaviour {
 			byte[] fileData = File.ReadAllBytes (Application.persistentDataPath + "/" + foto_perro.temp_img);
 		
 			Debug.Log ("try upload: foto perro");
-			string[] cols2 = new string[]{"id", "fecha_entrada", "usuarios_id", "perros_id", "fileUpload", "foto"};
+			string[] cols2 = new string[]{"id", "fecha_entrada", "usuarios_id", "perros_id", "fileUpload", "foto", "paseos_id"};
 			string[] data2 = new string[] {
 				foto_perro.id.ToString (),
 				foto_perro.fecha_entrada,
 				foto_perro.usuarios_id,
 				foto_perro.perros_id,
 				"imagen_perro",
-				foto_perro.temp_img
+				foto_perro.temp_img,
+				foto_perro.paseos_id
 			};
 			try {
 				sendData (cols2, data2, "upload_paseo", fileData);
@@ -956,7 +1399,7 @@ public class MainController : MonoBehaviour {
 		return System.Text.RegularExpressions.Regex.IsMatch(emailaddress, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
 	}
 
-	public void errorPopup(string error = "Error", string toclose = ""){
+	public void errorPopup2(string error = "Error", string toclose = ""){
 		/*popupScript.btnAction = 'c';
 		popupObj.SetActive (true);
 		popupScript.SendMessage ("setText", error);*/
@@ -978,6 +1421,64 @@ public class MainController : MonoBehaviour {
 		popup.SetActive (false);
 	}
 
+	private string todoQst = "";
+	//question popup
+	public void QestionPopup(string todo_ = "", string qstText = "Estas seguro?"){
+		qstPopup.SetActive (true);
+		qstPopupText.GetComponent<Text> ().text = qstText;
+		todoQst = todo_;
+	}
+
+	public void closeQstPopup(){
+		qstPopup.SetActive (false);
+	}
+
+	public void acceptQstPopup(){
+		if ( todoQst == "deletePerroUsuario" ) {
+			db.OpenDB("millasperrunas.db");
+			db.BasicQueryInsert ( "update perros_usuarios set aceptado = '0' where perros_id = '"+perro.id.ToString()+"' and usuarios_id = '"+userData.id.ToString()+"' " );
+			db.CloseDB();
+			
+			string[] cols = new string[]{ "usuarios_id", "perros_id" };
+			string[] colsVals = new string[]{ userData.id.ToString(), perro.id.ToString() };
+			
+			//sync
+			insert_sync(cols, colsVals, "delete_perro_usuario");
+			
+			Application.LoadLevel("cargar-invitar");
+		}
+
+		qstPopup.SetActive (false);
+	}
+
+
+	public void errorPopup(string error = "Error", string toclose = ""){
+
+		string btnText = "Aceptar";
+		/*if (toclose != "" && toclose != null) {
+			btnText = "Entiendo";
+			errorChrs = error;
+		}*/
+
+		NPBinding.UI.ShowAlertDialogWithSingleButton ("Alerta!", error, btnText, (string _buttonPressed)=>{
+			if (_buttonPressed == "Aceptar") {
+				Debug.Log("aceptado");
+			}
+			if (_buttonPressed == "Entiendo") {
+				errorPopup(errorChrs, "1");
+			}
+		}); 
+	}
+
+
+	public bool checkImageExists(string image_){
+		string filepath = Application.persistentDataPath + "/" + image_;
+		if (File.Exists (filepath)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	public Sprite spriteFromFile(string image_){
 		Debug.Log ("spriteFromFile: " + image_);
@@ -992,7 +1493,7 @@ public class MainController : MonoBehaviour {
 			sprite = Sprite.Create (tex, new Rect (0, 0, tex.width, tex.height), new Vector2 (0f, 0f));
 
 		} else {
-			Texture2D tex = Resources.Load("default") as Texture2D;
+			Texture2D tex = Resources.Load("default (2)") as Texture2D;
 			sprite = Sprite.Create (tex, new Rect (0, 0, tex.width, tex.height), new Vector2 (0f, 0f));
 		}
 		return sprite;
@@ -1026,7 +1527,41 @@ public class MainController : MonoBehaviour {
 		Debug.Log("Sending to upload_info");
 	}*/
 
-	public IEnumerator saveTextureToFile(Texture2D /*savedTexture */loadTexture, string fileName, char tosave){
+	public Sprite saveTextureRotate(string fileName, string rotate = "L"){
+		//yield return new WaitForSeconds(0.2f);
+
+		byte[] fileData = File.ReadAllBytes (Application.persistentDataPath + "/" + fileName);
+		Texture2D loadTexture = new Texture2D (2, 2);
+		loadTexture.LoadImage (fileData);
+
+		Texture2D photoCam = new Texture2D(loadTexture.height, loadTexture.width, TextureFormat.ARGB32, false);;
+		
+		for (var y = 0; y < loadTexture.height; y++) {
+
+			int newY = y;
+			if(rotate == "L"){
+				newY = loadTexture.height - y;
+			}
+
+			for (var x = 0; x < loadTexture.width; x++) {
+				int newX = x;
+				if(rotate == "R"){
+					newX = loadTexture.width - x;
+				}
+				photoCam.SetPixel (newY, newX, loadTexture.GetPixel (x, y));
+			}
+		}
+		
+		photoCam.Apply ();
+
+		byte[] ImgBytes_ = photoCam.EncodeToPNG ();
+		File.WriteAllBytes (Application.persistentDataPath + "/" + fileName, ImgBytes_);
+
+		Sprite sprite = Sprite.Create (photoCam, new Rect (0, 0, photoCam.width, photoCam.height), new Vector2 (0f, 0f));
+		return sprite;
+	}
+
+	public IEnumerator saveTextureToFile(Texture2D /*savedTexture */loadTexture, string fileName, char tosave, bool rotateLeft = false){
 		yield return new WaitForSeconds(0.5f);
 
 		int newWidth = 800;
@@ -1040,42 +1575,74 @@ public class MainController : MonoBehaviour {
 		
 		newTexture.SetPixels(0,0, savedTexture.width, savedTexture.height, savedTexture.GetPixels());
 		newTexture.Apply();
+
+		//rotar si es necesario
+		Texture2D photoCam = newTexture;
+		if (rotateLeft) {
+
+			photoCam = new Texture2D (newTexture.height, newTexture.width);
+			
+			for (var y = 0; y < newTexture.height; y++) {
+				for (var x = 0; x < newTexture.width; x++) {
+					//int newX = newTexture.width - x;
+					photoCam.SetPixel (y, x, newTexture.GetPixel (x, y));
+				}
+			}
+			
+			photoCam.Apply ();
+		}
+
 		if (tosave == 'p') {
-			perro.ImgBytes = newTexture.EncodeToPNG ();
+			if (rotateLeft) {
+				perro.ImgBytes = photoCam.EncodeToPNG ();
+			}else{
+				perro.ImgBytes = newTexture.EncodeToPNG ();
+			}
 			perro.temp_img = fileName;
 		
 			File.WriteAllBytes (Application.persistentDataPath + "/" + perro.temp_img, perro.ImgBytes);
 			Debug.Log (Application.persistentDataPath + "/" + perro.temp_img);
 		}else if(tosave == 'u'){
-			userData.ImgBytes = newTexture.EncodeToPNG ();
+			if (rotateLeft) {
+				userData.ImgBytes = photoCam.EncodeToPNG ();
+			}else{
+				userData.ImgBytes = newTexture.EncodeToPNG ();
+			}
+
 			userData.temp_img = fileName;
 			
 			File.WriteAllBytes (Application.persistentDataPath + "/" + userData.temp_img, userData.ImgBytes);
 			Debug.Log (Application.persistentDataPath + "/" + userData.temp_img);
 		}else if(tosave == 'f'){
+			if (rotateLeft) {
+				foto_perro.ImgBytes = photoCam.EncodeToPNG ();
+			}else{
+				foto_perro.ImgBytes = newTexture.EncodeToPNG ();
+			}
 
-			foto_perro.ImgBytes = newTexture.EncodeToPNG ();
 			foto_perro.temp_img = fileName;
 			
 			File.WriteAllBytes (Application.persistentDataPath + "/" + foto_perro.temp_img, foto_perro.ImgBytes);
 			Debug.Log (Application.persistentDataPath + "/" + foto_perro.temp_img);
 
 
-			string[] cols = new string[]{ "id", "fecha_entrada", "usuarios_id", "perros_id", "foto", "subida"};
+			string[] cols = new string[]{ "id", "fecha_entrada", "usuarios_id", "perros_id", "foto", "subida", "paseos_id"};
 			foto_perro.id = generateId ();
 			foto_perro.fecha_entrada = getActualDate();
 			foto_perro.usuarios_id = userData.id.ToString();
 			foto_perro.perros_id = perro.id.ToString();
-			string[] colsValues = new string[]{ foto_perro.id.ToString(), foto_perro.fecha_entrada, foto_perro.usuarios_id, foto_perro.perros_id, foto_perro.temp_img, "0" };
+			foto_perro.paseos_id = idPaseo;
+			string[] colsValues = new string[]{ foto_perro.id.ToString(), foto_perro.fecha_entrada, foto_perro.usuarios_id, foto_perro.perros_id, foto_perro.temp_img, "0", idPaseo };
 
 			db.OpenDB("millasperrunas.db");
 			db.InsertIntoSpecific ("fotos_paseo", cols, colsValues);
-
-			db.UpdateSingle("notificaciones", "visto", "1", "id", notificacionId);
 			db.CloseDB();
+			/*db.UpdateSingle("notificaciones", "visto", "1", "id", notificacionId);
+			db.CloseDB();*/
 
 			//redireccionar a gracias
 			Application.LoadLevel ("msg-foto-tomada");
+			showLoading (false);
 		}
 	}
 
@@ -1106,6 +1673,17 @@ public class MainController : MonoBehaviour {
 		return result;
 	}
 
+	public IEnumerator updateRegId(){
+		yield return new WaitForSeconds (1f);
+		if (userData.id != null && userData.id != 0) {
+			string[] cols = new string[]{ "usuarios_id", "regid", "plataforma" };
+			string[] colsVals = new string[]{ userData.id.ToString (), userData.reg_id, userData.plataforma };
+		
+			//sync
+			insert_sync (cols, colsVals, "update_regid");
+		}
+	}
+
 	private void checkFinishWeek(){
 
 		/*string perros_list = "0";
@@ -1130,35 +1708,41 @@ public class MainController : MonoBehaviour {
 
 		string perroId = (perro_id != 0) ? perro_id.ToString() : perro.id.ToString ();
 
-		Badges badges = new Badges();
+		if (perroId != null && perroId != "") {
 
-		//verificar si ya tengo el badget
-		db.OpenDB ("millasperrunas.db");
-		ArrayList result = db.BasicQueryArray ("select badges_id from badges_usuarios where badges_id = '"+badgetId.ToString()+"' and usuarios_id = '"+userData.id.ToString()+"' and perros_id = '"+perroId+"'  ");
+			Badges badges = new Badges ();
 
-		if ( result.Count == 0 && badges.checkBadges(badgetId) ) {
+			//verificar si ya tengo el badget
+			db.OpenDB ("millasperrunas.db");
+			ArrayList result = db.BasicQueryArray ("select badges_id from badges_usuarios where badges_id = '" + badgetId.ToString () + "' and usuarios_id = '" + userData.id.ToString () + "' and perros_id = '" + perroId + "'  ");
+			db.CloseDB ();
 
-			/*if(badgetId == 2){
-				DateTime dateValue = DateTime.Now;
-				int dayoftheweek = (int) dateValue.DayOfWeek;
+			if (result.Count == 0 && badges.checkBadges (badgetId)) {
 
-				if(dayoftheweek == 1){//termino la semana
+				string generatedId = getBadgesUsuariosNewId();
+				string[] cols = new string[]{"id", "badges_id", "usuarios_id", "fecha_entrada", "perros_id"};
+				string[] colsVals = new string[] {
+					generatedId,
+					badgetId.ToString (),
+					userData.id.ToString (),
+					getActualDate (),
+					perroId
+				};
 
-				}
-			}else{}*/
-
-			string generatedId = generateId().ToString();
-			string[] cols = new string[]{"id", "badges_id", "usuarios_id", "fecha_entrada", "perros_id"};
-			string[] colsVals = new string[]{ generatedId, badgetId.ToString(), userData.id.ToString(), getActualDate(), perroId };
+				//Debug.Log(generatedId+ "|" + badgetId + "|" + userData.id + "|" + getActualDate () + "|" + perroId );
 			
-			db.InsertIntoSpecific("badges_usuarios", cols, colsVals);
+				Debug.Log("guardo badge nro: " + badgetId);
+				db.OpenDB ("millasperrunas.db");
+				db.InsertIntoSpecific ("badges_usuarios", cols, colsVals);
+				db.CloseDB ();
 
-			//sync
-			insert_sync(cols, colsVals, "badges_usuarios");
+				//sync
+				insert_sync (cols, colsVals, "badges_usuarios");
+
+			}
+
 
 		}
-
-		db.CloseDB ();
 	}
 
 

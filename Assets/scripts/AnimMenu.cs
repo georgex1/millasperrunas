@@ -42,7 +42,16 @@ public class AnimMenu : MonoBehaviour {
 	}
 
 	public void cargarEscena(string pageName){
+
+		MainController GMS = GameObject.Find ("MainController").GetComponent<MainController> ();
+		GMS.antScene = Application.loadedLevelName;
+
 		StartCoroutine(cargarEscenaMenu(pageName));
+	}
+
+	public void logout(){
+		MainController GMS = GameObject.Find ("MainController").GetComponent<MainController> ();
+		GMS.logout ();
 	}
 	
 }

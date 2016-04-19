@@ -51,11 +51,38 @@ public class notificacion : MonoBehaviour {
 	}
 
 	public void aceptar_invitacion(string aceptado){
+
+
+
+		if (aceptado == "0") {
+			GMS.db.OpenDB("millasperrunas.db");
+			GMS.db.BasicQueryInsert ("delete from perros_usuarios where perros_id = '" + perros_id + "' and usuarios_id = '" + GMS.userData.id.ToString () + "' ");
+			GMS.db.CloseDB();
+		} else {
+			GMS.db.OpenDB("millasperrunas.db");
+			GMS.db.BasicQueryInsert ("update perros_usuarios set aceptado = '1' where usuarios_id = '" + GMS.userData.id.ToString () + "' and perros_id = '"+perros_id+"' ");
+			//GMS.db.UpdateSingle("perros_usuarios", "aceptado", aceptado, "perros_id" , perros_id );
+			GMS.db.CloseDB();
+
+			GMS.get_familiares();
+		}
+
+		//borrar notificacion
+		GMS.db.OpenDB("millasperrunas.db");
+		GMS.db.BasicQueryInsert("delete from notificaciones where id = '" +GMS.notificacionId+ "' ");
+		GMS.db.CloseDB();
+
 		string[] fields = {"aceptado", "perros_id", "usuarios_id"};
 		string[] values = {aceptado, perros_id, GMS.userData.id.ToString()};
 		GMS.insert_sync(fields, values, "perros_invitacion_respuesta");
 
-		GMS.db.UpdateSingle("perros_usuarios", "aceptado", aceptado, "perros_id" , perros_id );
+		GMS.showLoading (true);
+		StartCoroutine (gotoBack());
+	}
+
+	private IEnumerator gotoBack(){
+		yield return new WaitForSeconds (2f);
+		GMS.showLoading (false);
 		Application.LoadLevel ("home-mascota");
 	}
 

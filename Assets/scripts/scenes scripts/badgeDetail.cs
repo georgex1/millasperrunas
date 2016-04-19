@@ -16,7 +16,10 @@ public class badgeDetail : MonoBehaviour {
 
 		string badgeId = PlayerPrefs.GetString ("badgeId");
 
+		GMS.db.OpenDB("millasperrunas.db");
 		ArrayList result = GMS.db.BasicQueryArray ( "select id, nombre, foto, descripcion from badges where id = '"+badgeId+"' " );
+		GMS.db.CloseDB();
+
 		if (result.Count > 0) {
 			badgeTitle.text = ((string[])result [0]) [1];
 			badgeDescription.text = ((string[])result [0]) [3];

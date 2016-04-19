@@ -68,7 +68,14 @@ public class invitarFacebook : MonoBehaviour {
 					GameObject clone = Instantiate(OptionDefault, OptionDefault.transform.position, OptionDefault.transform.rotation) as GameObject;
 					clone.transform.SetParent(OptionDefault.transform.parent);
 					clone.transform.localScale = new Vector3(1, 1, 1);
-					clone.GetComponentInChildren<Text> ().text = nameVar;
+					//clone.GetComponentInChildren<Text> ().text = nameVar;
+					clone.transform.Find("Text").GetComponent<Text>().text = nameVar;
+					clone.transform.Find("TextFbid").GetComponent<Text>().text = (string)friendDict["id"];
+					try{
+						clone.transform.Find("TextEmail").GetComponent<Text>().text = (string)friendDict["email"];
+					}catch{
+						Debug.Log("no fb email");
+					}
 					//clone.GetComponentInChildren<Text> ().name = (string)friendDict["first_name"] + "__" + (string)friendDict["email"];
 				}
 				/*

@@ -29,32 +29,15 @@ public class ImagePickerMascota : MonoBehaviour {
 
 	private void test_guardar(){
 
-		byte[] fileData = File.ReadAllBytes("Assets/Resources/fluence GT2.jpg");
+		byte[] fileData = File.ReadAllBytes("Assets/Resources/Huskey-Siberiano.jpg");
 		Texture2D  tex = new Texture2D(2, 2);
 		tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
 		imageTexture.renderer.material.mainTexture = tex;
-
-
-		Texture2D savedTexture = imageTexture.renderer.material.mainTexture as Texture2D;
-		Texture2D newTexture = new Texture2D(savedTexture.width, savedTexture.height, TextureFormat.ARGB32, false);
 		
-		newTexture.SetPixels(0,0, savedTexture.width, savedTexture.height, savedTexture.GetPixels());
-		newTexture.Apply();
-
-		byte[] fileDataTS = newTexture.EncodeToPNG ();
-
-		File.WriteAllBytes(Application.persistentDataPath + "/SavedScreen2.png", fileDataTS);
-		Debug.Log (Application.persistentDataPath + "/SavedScreen2.png");
-
-		Debug.Log (savedTexture.width + "x" + savedTexture.height);
-		Sprite sprite = Sprite.Create (tex, new Rect(0,0, savedTexture.width, savedTexture.height), new Vector2(0f,0f));
-
-
-		GameObject.Find ("backImage").GetComponent<Image>().sprite = sprite;
-
-		GMS.perro.temp_img = GMS.generateId ().ToString() + ".png";
-		StartCoroutine ( GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.perro.temp_img, 'p') );
-		//StartCoroutine (loadImage());
+		GMS.perro.temp_img = GMS.generateId ().ToString () + ".png";
+		
+		StartCoroutine (GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.perro.temp_img, 'p', true));
+		StartCoroutine (loadImage ());
 
 	}
 
@@ -67,14 +50,20 @@ public class ImagePickerMascota : MonoBehaviour {
 			imageTexture.renderer.material.mainTexture = image;
 		
 			GMS.perro.temp_img = GMS.generateId ().ToString () + ".png";
+
+			bool rotateLeft = false;
+			
+			if (Input.deviceOrientation == DeviceOrientation.Portrait){
+				rotateLeft = true;
+			}
 		
-			StartCoroutine (GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.perro.temp_img, 'p'));
+			StartCoroutine (GMS.saveTextureToFile (imageTexture.renderer.material.mainTexture as Texture2D, GMS.perro.temp_img, 'p', rotateLeft));
 			StartCoroutine (loadImage ());
 		}
 	}
 
 	IEnumerator loadImage(){
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
 		Sprite sprite = GMS.spriteFromFile (GMS.perro.temp_img);
 		GameObject.Find ("backImage").GetComponent<Image>().sprite = sprite;
 		GMS.showLoading (false);

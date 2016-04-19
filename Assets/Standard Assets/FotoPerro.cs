@@ -8,7 +8,8 @@ public class FotoPerro{
 
 	public string fecha_entrada, 
 	usuarios_id,
-	perros_id;
+	perros_id,
+	paseos_id;
 	
 	public byte[] ImgBytes;
 	
@@ -26,6 +27,7 @@ public class FotoPerro{
 		usuarios_id = row_ [2];
 		perros_id = row_ [3];
 		temp_img = row_ [4];
+		paseos_id = row_ [5];
 	}
 
 }

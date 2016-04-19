@@ -13,6 +13,8 @@ public class fechaNacimiento : MonoBehaviour {
 
 	private MainController GMS;
 
+	public bool isRegistro = false;
+
 	// Use this for initialization
 	void Start () {
 		generarDias ();
@@ -21,6 +23,18 @@ public class fechaNacimiento : MonoBehaviour {
 
 		GameObject GM = GameObject.Find ("MainController");
 		GMS = GM.GetComponent<MainController>();
+
+		if (isRegistro) {
+			if(GMS.userData.date_day != ""){
+				btnDay.GetComponentInChildren<Text> ().text = GMS.userData.date_day;
+			}
+			if(GMS.userData.date_month != ""){
+				btnMonth.GetComponentInChildren<Text> ().text = GMS.userData.unformat_month(GMS.userData.date_month);
+			}
+			if(GMS.userData.date_year != ""){
+				btnYear.GetComponentInChildren<Text> ().text = GMS.userData.date_year;
+			}
+		}
 	}
 	
 	// Update is called once per frame

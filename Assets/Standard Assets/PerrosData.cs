@@ -10,7 +10,7 @@ public class PerroData {
 	edad,
 	peso,
 	foto, razas_id,
-	parentescos_id, puntos, kilometros, puntos_totales;
+	parentescos_id, puntos, kilometros, puntos_totales, chat_group;
 
 	public byte[] ImgBytes;
 
@@ -19,7 +19,7 @@ public class PerroData {
 	
 	public PerroData(){
 		puntos = kilometros = puntos_totales = "0";
-		foto = temp_img = "";
+		foto = temp_img = chat_group = "";
 		//ExercisesMetricas = new Dictionary<string, int> ();
 	}
 
@@ -42,12 +42,13 @@ public class PerroData {
 		puntos = row_ [7];
 		kilometros = row_ [8];
 		puntos_totales = row_ [9];
+		chat_group = row_ [10];
 	}
 
 	public string queryPerrosUsuario(int usuarios_id){
 		string query = 
 			"select perros.id, perros.nombre, perros.edad, perros.peso, perros.foto, perros.razas_id, " +
-			"perros_usuarios.parentescos_id, perros_usuarios.puntos, perros_usuarios.kilometros, perros_usuarios.puntos_totales " +
+				"perros_usuarios.parentescos_id, perros_usuarios.puntos, perros_usuarios.kilometros, perros_usuarios.puntos_totales, perros_usuarios.chat_group " +
 				"from perros inner join perros_usuarios on perros_usuarios.perros_id = perros.id where perros_usuarios.aceptado = '1' and perros_usuarios.usuarios_id = " + usuarios_id.ToString();
 
 		return query;
@@ -56,7 +57,7 @@ public class PerroData {
 	public string queryPerro(string perros_id, int usuarios_id){
 		string query = 
 			"select perros.id, perros.nombre, perros.edad, perros.peso, perros.foto, perros.razas_id, " +
-				"perros_usuarios.parentescos_id, perros_usuarios.puntos, perros_usuarios.kilometros, perros_usuarios.puntos_totales " +
+				"perros_usuarios.parentescos_id, perros_usuarios.puntos, perros_usuarios.kilometros, perros_usuarios.puntos_totales, perros_usuarios.chat_group " +
 				"from perros inner join perros_usuarios on perros_usuarios.perros_id = perros.id where perros_usuarios.perros_id = " + perros_id + " " +
 				"and perros_usuarios.usuarios_id = " + usuarios_id.ToString() + " and perros_usuarios.aceptado = '1' ";
 		Debug.Log (query);
@@ -68,6 +69,7 @@ public class PerroData {
 			"select SUM(perros_usuarios.kilometros) as sum_km, SUM(perros_usuarios.puntos) as sum_puntos " +
 				"from perros inner join perros_usuarios on perros_usuarios.perros_id = perros.id " +
 				"where perros.id = "+ perros_id +" group by perros.id ";
+
 		return query;
 	}
 }

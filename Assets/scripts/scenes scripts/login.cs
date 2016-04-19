@@ -16,14 +16,24 @@ public class login : MonoBehaviour {
 
 		//auto login usuario
 		GMS.db.OpenDB("millasperrunas.db");
-		ArrayList result = GMS.db.BasicQueryArray ("select id, email, nombre, fbid, fecha_nacimiento, sexo from usuarios limit 1");
+		ArrayList result = GMS.db.BasicQueryArray ("select id, email, nombre, fbid, fecha_nacimiento, sexo, foto from usuarios limit 1");
 		if (result.Count > 0) {
-			GMS.userData.populateUser(  ((string[])result [0]) );
+			GMS.userData.populateUser2(  ((string[])result [0]) );
+
+			StartCoroutine(GMS.updateRegId());
+
 			/*foreach (string[] row_ in result) {
 				GMS.userData.populateUser(row_);
 			}*/
+			if(GMS.userData.foto != "" && GMS.userData.foto != null ){
+				GMS.toRedirectLogin = "cargar-invitar";
+				Application.LoadLevel ("initGPS");
+			}else{
+				GMS.toRedirectLogin = "subir-foto";
+				Application.LoadLevel ("initGPS");
+			}
 
-			Application.LoadLevel ("cargar-invitar");
+
 		}
 		GMS.db.CloseDB();
 

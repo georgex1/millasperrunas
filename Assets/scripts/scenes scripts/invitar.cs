@@ -24,7 +24,7 @@ public class invitar : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update(){
-		if (nombre.GetComponent<Text> ().text != "" && validEmail (email.GetComponent<Text> ().text) 
+		if (nombre.GetComponent<InputField> ().text != "" && validEmail (email.GetComponent<InputField> ().text) 
 		    && GMS.invitado.parentescos_id != "" && GMS.invitado.perros_id != "" ) {
 			if(!buttonSubmit.activeSelf){
 				buttonSubmit.SetActive (true);
@@ -95,23 +95,62 @@ public class invitar : MonoBehaviour {
 	}
 
 	public void selectfbUser(GameObject opcion){
-		nombre.transform.parent.GetComponent<InputField>().text = opcion.GetComponentInChildren<Text> ().text;;
+		//nombre.GetComponent<InputField>().text = opcion.GetComponentInChildren<Text> ().text;
+		nombre.GetComponent<InputField>().text = opcion.transform.Find("Text").GetComponent<Text>().text;
+		email.GetComponent<InputField>().text = opcion.transform.Find("TextEmail").GetComponent<Text>().text;
+
+		//obtener email del fbuser
+
+		get_fbuserdata (opcion.transform.Find("TextFbid").GetComponent<Text>().text);
+
 		//nombre.GetComponent<Text> ().text = opcion.GetComponentInChildren<Text> ().text;
 		GameObject.Find("DDFacebook").SetActive (false);
 	}
 
+	private void get_fbuserdata(string fbid){
+		GMS.showLoading (true);
+		WWWForm form = new WWWForm();
+		form.AddField("appHash", GMS.appHash);
+		form.AddField("action", "get_fbuserdata");
+		form.AddField("fbid", fbid);
+		
+		WWW www = new WWW(GMS.responseURL, form);
+		StartCoroutine(WaitForRequestF(www));
+		//Debug.Log(www.text);
+		
+	}
+
+	IEnumerator WaitForRequestF(WWW www){
+		yield return www;
+		if (www.error == null) {
+			IDictionary Wresponse = (IDictionary)MiniJSON.Json.Deserialize (www.text);
+			string Wcontent_ = MiniJSON.Json.Serialize(Wresponse["content"]);
+			IDictionary Wresponse2 = (IDictionary) MiniJSON.Json.Deserialize ( Wcontent_ );
+			//(string)Wcontent_["email"])
+			email.GetComponent<InputField>().text = (string)Wresponse2["email"];
+			GMS.showLoading (false);
+		}
+	}
+
+
+
 	public void submit(){
-		string nombre_ = nombre.GetComponent<Text> ().text;
-		string email_ = email.GetComponent<Text> ().text;
+		string nombre_ = nombre.GetComponent<InputField> ().text;
+		string email_ = email.GetComponent<InputField> ().text;
 
 		if(!GMS.haveInet){
 			GMS.errorPopup("Verifica tu conexion a internet");
 		}else{
-			
-			GMS.invitado.email = email_;
-			GMS.invitado.nombre = nombre_;
 
-			GMS.invitar();
+			if(email_ == GMS.userData.email){
+				GMS.errorPopup("No puedes invitarte a ti mismo.");
+			}else{
+
+				GMS.invitado.email = email_;
+				GMS.invitado.nombre = nombre_;
+
+				GMS.invitar();
+			}
 		}
 	}
 

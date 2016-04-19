@@ -16,7 +16,7 @@ public class loginEmailSC : MonoBehaviour {
 
 	public void login(){
 
-		string email_ = Email.GetComponent<Text> ().text;
+		string email_ = Email.GetComponent<InputField> ().text;
 		string pass_ = Password.GetComponent<InputField> ().text;
 
 		GMS.userData.email = email_;

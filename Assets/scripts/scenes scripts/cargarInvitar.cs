@@ -30,7 +30,7 @@ public class cargarInvitar : MonoBehaviour {
 	
 	public void cargarEscena(string escena){
 		if (escena == "invitar-email" && !hasPerro) {
-			GMS.errorPopup ("No tiene cargada ninguna mascota todavia", "0");
+			GMS.errorPopup ("Debes tener cargada una mascota.", "0");
 		} else {
 			Application.LoadLevel (escena);
 		}

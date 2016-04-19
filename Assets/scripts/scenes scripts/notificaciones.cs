@@ -35,7 +35,7 @@ public class notificaciones : MonoBehaviour {
 			
 			clone.transform.SetParent(OptionDefault.transform.parent);
 			clone.transform.localScale = new Vector3(1, 1, 1);
-			clone.transform.name = "opt_" + row_[0] + "_" + row_[3];
+			clone.transform.name = "opt_" + row_[0] ;
 		}
 		
 		Destroy (OptionDefault);
@@ -47,11 +47,12 @@ public class notificaciones : MonoBehaviour {
 		string[] opcionName = tip.name.Split ('_');
 		GMS.notificacionId = opcionName[1];
 
-		if (opcionName [2] == "foto") {//sacar foto al perro
+		/*if (opcionName [2] == "foto") {//sacar foto al perro
 			Application.LoadLevel ("msg-tomar-foto");
 		} else{
 			Application.LoadLevel ("notificacion");
-		}
+		}*/
+		Application.LoadLevel ("notificacion");
 	}
 
 	public void backBtn(){

@@ -6,8 +6,8 @@ public class home : MonoBehaviour {
 	//private dbAccess db ;
 	private MainController GMS;
 
-	public GameObject sumPuntos;
-	public GameObject sumKm;
+	//public GameObject sumPuntos;
+	//public GameObject sumKm;
 	public GameObject indPuntos;
 	public GameObject indKm;
 	public GameObject famPuntos;
@@ -18,6 +18,7 @@ public class home : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		GameObject GM = GameObject.Find ("MainController");
 		GMS = GM.GetComponent<MainController>();
 
@@ -31,6 +32,8 @@ public class home : MonoBehaviour {
 			foreach (string[] row_ in result) {
 				GMS.perro.populatePerro (row_);
 			}
+		} else {
+			Application.LoadLevel("cargar-invitar");
 		}
 
 
@@ -55,7 +58,13 @@ public class home : MonoBehaviour {
 		GMS.db.CloseDB();
 
 		if (resultF.Count > 0) {
-			foreach (string[] row2_ in resultF) {
+
+			Debug.Log("famKm: " + ((string[])resultF [0]) [0] + " | famPuntos: " + ((string[])resultF [0]) [1]);
+
+			famKm.GetComponent<Text>().text = float.Parse( ((string[])resultF [0]) [0] ).ToString("n2")+ " KM";
+			famPuntos.GetComponent<Text>().text = float.Parse( ((string[])resultF [0]) [1] ).ToString("n2")+ " PTS.";
+
+			/*foreach (string[] row2_ in resultF) {
 				famKm.GetComponent<Text>().text = float.Parse( row2_[0] ).ToString("n2")+ " KM";
 				famPuntos.GetComponent<Text>().text = float.Parse( row2_[1] ).ToString("n2")+ " PTS.";
 
@@ -64,7 +73,7 @@ public class home : MonoBehaviour {
 
 				sumPuntos.GetComponent<Text>().text = sumPuntos_.ToString("n2")+ " PTS.";
 				sumKm.GetComponent<Text>().text = sumKm_.ToString("n2")+ " KM";
-			}
+			}*/
 		}
 
 		perroNombre.GetComponent<Text>().text = GMS.perro.nombre;

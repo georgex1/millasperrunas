@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class cargarMascota : MonoBehaviour {
 
@@ -23,6 +24,11 @@ public class cargarMascota : MonoBehaviour {
 	private MainController GMS;
 	private bool isDebugScreen;
 
+	public Text TextKg;
+
+	public GameObject rotL;
+	public GameObject rotR;
+
 	// Use this for initialization
 	void Start () {
 		isDebugScreen = false;
@@ -32,10 +38,20 @@ public class cargarMascota : MonoBehaviour {
 			GameObject GM = GameObject.Find ("MainController");
 			GMS = GM.GetComponent<MainController> ();
 		}
+
+		rotL.SetActive(false);
+		rotR.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(GMS.perro.temp_img != "" && !rotL.activeSelf){
+			rotL.SetActive(true);
+			rotR.SetActive(true);
+		}
+
+
 		if (Nombre.GetComponent<Text> ().text != "" && peso_ != "" && edad_ != "" && raza_ != "0" && GMS.perro.temp_img != "") {
 			if (!buttonSubmit.activeSelf) {
 				buttonSubmit.SetActive (true);
@@ -45,6 +61,10 @@ public class cargarMascota : MonoBehaviour {
 				buttonSubmit.SetActive (false);
 			}
 		}
+	}
+
+	public void rotateLeft(string direct){
+		GameObject.Find ("backImage").GetComponent<Image>().sprite = GMS.saveTextureRotate (GMS.perro.temp_img, direct);
 	}
 
 	public void submit(){
@@ -67,9 +87,9 @@ public class cargarMascota : MonoBehaviour {
 
 	}
 
-	public void changePeso(string peso){
+	/*public void changePeso(string peso){
 		peso_ = peso;
-	}
+	}*/
 
 	/*public void selectRaza(string razas_id){
 		raza_ = razas_id;
@@ -98,5 +118,14 @@ public class cargarMascota : MonoBehaviour {
 
 	public void cargarEscena(string escena){
 		Application.LoadLevel (escena);
+	}
+
+	public void PesoOnValueChanged(float newValue)
+	{
+
+		int pesoVal = (int)Math.Ceiling (newValue);
+
+		TextKg.text = pesoVal+" Kg";
+		peso_ = pesoVal.ToString();
 	}
 }

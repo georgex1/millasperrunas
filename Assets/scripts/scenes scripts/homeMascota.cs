@@ -9,6 +9,9 @@ public class homeMascota : MonoBehaviour {
 	public GameObject TKm;
 
 	public GameObject perro_bck;
+	public GameObject familiaItem;
+
+	private ArrayList famliaList;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +37,7 @@ public class homeMascota : MonoBehaviour {
 				clone.name = "perro_" + row_[0];
 
 				Sprite sprite_ = GMS.spriteFromFile ( row_[4] );
-				clone.GetComponent<Image> ().sprite = sprite_;
+				clone.transform.Find("PanelImage").GetComponent<Image> ().sprite = sprite_;
 
 				Debug.Log("perro: " + row_[1]);
 
@@ -47,8 +50,46 @@ public class homeMascota : MonoBehaviour {
 		
 		Destroy (perrosItem);
 
-		//cargar los familiares del perro seleccionado
+		//populateFamilia ();
 
+	}
+
+	private void populateFamilia(){
+
+		familiaItem.SetActive (false);
+
+		//borrar la familia anterior
+		GameObject[] panels = GameObject.FindGameObjectsWithTag("familiaTag");
+		for (int i = 0; i < panels.Length; i++) {
+			if(panels[i].activeSelf){
+				Destroy(panels[i]);
+			}
+		}
+
+		//cargar los familiares del perro seleccionado
+		GMS.db.OpenDB("millasperrunas.db");
+		
+		ArrayList result = GMS.db.BasicQueryArray ( GMS.userData.queryFamiliaRanking(GMS.perro.id.ToString()) );
+		GMS.db.CloseDB();
+		
+		familiaItem.SetActive (true);
+
+		if (result.Count > 0) {
+			foreach (string[] row_ in result) {
+				if(row_[3] != ""){
+					GameObject clone = Instantiate(familiaItem, familiaItem.transform.position, familiaItem.transform.rotation) as GameObject;
+					clone.transform.SetParent(familiaItem.transform.parent);
+					clone.transform.localScale = new Vector3(1, 1, 1);
+					clone.name = "familia_" + row_[0];
+					
+					Sprite sprite_ = GMS.spriteFromFile ( row_[3] );
+					clone.transform.Find("PanelImage").GetComponent<Image> ().sprite = sprite_;
+					//clone.GetComponent<Image> ().sprite = sprite_;
+				}
+			}
+		}
+		
+		familiaItem.SetActive (false);
 	}
 
 	private void changePerroData(){
@@ -60,6 +101,8 @@ public class homeMascota : MonoBehaviour {
 		TKm.GetComponent<Text> ().text = float.Parse( GMS.perro.kilometros ).ToString ("n2") + " KM";
 
 		GMS.paseoPerroId = GMS.perro.id;
+
+		populateFamilia ();
 	}
 
 	void Awake(){
@@ -88,5 +131,9 @@ public class homeMascota : MonoBehaviour {
 		}
 		changePerroData ();
 
+	}
+
+	public void deletePerroUsuario(){
+		GMS.QestionPopup ("deletePerroUsuario", "¿Estás seguro que querés dejar de pasear a "+GMS.perro.nombre+"?");
 	}
 }

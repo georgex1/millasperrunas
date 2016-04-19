@@ -5,8 +5,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 
 public class WMG_X_puntosChart : MonoBehaviour {
-
-	public Text perroNombre;
+	
 	public Text Puntos;
 	public Text Kilometros;
 
@@ -30,14 +29,14 @@ public class WMG_X_puntosChart : MonoBehaviour {
 		GameObject GM = GameObject.Find ("MainController");
 		GMS = GM.GetComponent<MainController>();
 
-		ciudadKm.text = "0KM";
+		ciudadKm.text = "0 KM";
 		ciudad.text = "Buenos Aires";
-
-		perroNombre.text = GMS.perro.nombre;
 
 		GMS.db.OpenDB("millasperrunas.db");
 
 		ArrayList result = GMS.db.BasicQueryArray ("select puntos, kilometros from paseos where perros_id = '"+GMS.perro.id.ToString()+"' and usuarios_id = '"+GMS.userData.id.ToString()+"' order by fecha_entrada DESC limit 10 ");
+
+		GMS.db.CloseDB();
 
 		Debug.Log("en start");
 
@@ -66,10 +65,21 @@ public class WMG_X_puntosChart : MonoBehaviour {
 
 			//2500 ---- 90
 			//1250 ----- x
+			bool hasCKM = false;
 
 			Debug.Log("hay datos");
 			Debug.Log("max puntos: " + maxPuntos);
 			foreach(string[] row_ in result){
+				/*string kmsA = "0";
+				if(row_[1] != "" && row_[1] != null){
+					float kmsF = float.Parse(row_[1]) / 1000;
+					kmsA = kmsF.ToString("n2");
+				}*/
+				string kmsA = "0";
+				if(row_[1] != "" && row_[1] != null){
+					kmsA = float.Parse( row_[1] ).ToString("n2");;
+				}
+
 				Debug.Log("puntos: " + row_[0] + " | " + row_[1] );
 				i ++;
 				posX = 5*i;
@@ -78,17 +88,23 @@ public class WMG_X_puntosChart : MonoBehaviour {
 				Debug.Log("calc puntos: " + calcPuntos);
 
 				chartData.Add(new Vector2 (posX, calcPuntos ));
-				chartLabels.Add(row_[0]+ "Pts" + System.Environment.NewLine + row_[1] + "Km");
+				chartLabels.Add(row_[0]+ " Pts" + System.Environment.NewLine + kmsA + " Km");
 
-				ciudadKm.text = row_[1] + "Km";
+				if(!hasCKM){
+					ciudadKm.text = kmsA + " KMS";
+					hasCKM = true;
+				}
 
-				Debug.Log(row_[0]+ "Pts" + System.Environment.NewLine + row_[1] + "Km | %: " + calcPuntos);
+				//Debug.Log(row_[0]+ " Pts" + System.Environment.NewLine + kmsA + " Km | %: " + calcPuntos);
 			}
 		}
-		GMS.db.CloseDB();
 
-		Puntos.text = sumPuntos.ToString ();
-		Kilometros.text = sumKms.ToString ();
+
+		Puntos.text = sumPuntos.ToString () + " PTS";
+		Kilometros.text = sumKms.ToString ("n2") + " KMS";
+
+		chartData.Reverse();
+		chartLabels.Reverse ();
 
 		startGraph ();
 	}
@@ -122,6 +138,11 @@ public class WMG_X_puntosChart : MonoBehaviour {
 		}
 
 		graph.xAxisLabels = xLabels;
+
+		//cambio el color del actual
+		if(chartLabels.Count > 0){
+			StartCoroutine(changeActColor());
+		}
 
 		/*xLabels.Add ("uno"+ System.Environment.NewLine + "dada");
 		xLabels.Add ("dos");
@@ -171,6 +192,12 @@ public class WMG_X_puntosChart : MonoBehaviour {
 		
 		graph.xAxisLabels = xLabels;*/
 
+	}
+
+	private IEnumerator changeActColor(){
+		int nodeNum = chartLabels.Count - 1;
+		yield return new WaitForSeconds (0.3f);
+		GameObject.Find ("XAxisLabels/WMG_Node_"+nodeNum+"/Text").GetComponent<Text>().color = new Color(0f/255.0f, 166.0f/255.0f, 75.0f/255.0f);
 	}
 	
 	/*IEnumerator changeData(){
