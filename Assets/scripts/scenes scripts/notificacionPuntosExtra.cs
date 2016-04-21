@@ -17,17 +17,20 @@ public class notificacionPuntosExtra : MonoBehaviour {
 	public GameObject PanelAnimLluvia;
 	public GameObject PanelAnimFutbol;
 
+	private int lastMotivoKey;
 
 	// Use this for initialization
 	void Start () {
 
 		GameObject GM = GameObject.Find ("MainController");
 		GMS = GM.GetComponent<MainController>();
+
+		lastMotivoKey = GMS.puntosEspecialesMotivoIds.Count;
 		/*foreach (string anim_ in anims) {
 			GameObject.Find (anim_).SetActive(false);
 		}*/
 
-		switch (GMS.puntosEspecialesMotivoId) {
+		switch (GMS.puntosEspecialesMotivoIds[lastMotivoKey]) {
 		case "1": PanelAnimNoche.SetActive(true); break;
 		case "2": PanelAnimShow.SetActive(true); break;
 		case "3": PanelAnimNieve.SetActive(true); break;
@@ -40,5 +43,16 @@ public class notificacionPuntosExtra : MonoBehaviour {
 	
 	public void cargarEscena(string pageName){
 		Application.LoadLevel(pageName);
+	}
+
+	public void siguiente(){
+		GMS.puntosEspecialesMotivoIds.Remove(lastMotivoKey);
+		lastMotivoKey--;
+		if (lastMotivoKey > 0) {
+			Application.LoadLevel ("notificacion_puntos_especiales");
+		} else {
+			Application.LoadLevel("home");
+		}
+
 	}
 }

@@ -56,6 +56,11 @@ public class invitarFacebook : MonoBehaviour {
 		OptionDefault.SetActive (true);
 		DDFacebook.SetActive(true);
 
+		GameObject[] fbUserObj = GameObject.FindGameObjectsWithTag ("fbUserTag");
+		foreach (GameObject fbUserObj_ in fbUserObj){
+			Destroy(fbUserObj_);
+		}
+
 		if(dict.TryGetValue ("friends", out friendsH)) {
 			friends = (List<object>)(((Dictionary<string, object>)friendsH) ["data"]);
 			if(friends.Count > 0) {
@@ -76,6 +81,8 @@ public class invitarFacebook : MonoBehaviour {
 					}catch{
 						Debug.Log("no fb email");
 					}
+
+					clone.transform.tag = "fbUserTag";
 					//clone.GetComponentInChildren<Text> ().name = (string)friendDict["first_name"] + "__" + (string)friendDict["email"];
 				}
 				/*

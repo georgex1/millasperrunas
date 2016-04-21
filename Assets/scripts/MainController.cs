@@ -35,6 +35,7 @@ public class MainController : MonoBehaviour {
 	public float partialTime = 1f;
 	public string idPaseo;
 	public string puntosEspecialesMotivoId;
+	public Dictionary<int,string> puntosEspecialesMotivoIds = new Dictionary<int,string>();
 	public int paseoPerroId = 0;
 	public bool paseoPhotoTaked = false;
 	public bool gpsRunning = true;

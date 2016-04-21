@@ -546,7 +546,6 @@ public class gpsController : MonoBehaviour
 	//debug
 	void OnGUI ()
 	{
-
 		if (isStart) {
 			if (GMS.isDebug) {
 				Double tometers = sumDistance * 1000;

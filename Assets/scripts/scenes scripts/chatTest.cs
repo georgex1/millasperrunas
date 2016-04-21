@@ -115,7 +115,7 @@ public class chatTest : MonoBehaviour {
 			clone.transform.localScale = new Vector3(1, 1, 1);
 			clone.SetActive(true);
 			//Debug.Log(smIn.message);
-			clone.transform.Find("PanelC/PanelP/TextMgs").GetComponent<Text> ().text = smIn.message;
+			clone.transform.Find("PanelC/PanelP/TextMgs").GetComponent<Text> ().text = smIn.message.Replace("&#10;"," ");
 			clone.transform.Find("PanelC/PanelP/TextTime").GetComponent<Text> ().text = smIn.sender + " " + printDate;
 
 
@@ -137,12 +137,22 @@ public class chatTest : MonoBehaviour {
 		yield return new WaitForSeconds (0.1f);
 		ScrollObj.GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
 	}
+
+	private TouchScreenKeyboard keyboard;
 	
 	// Update is called once per frame
 	void Update () {
+		/*if (Input.GetKeyDown("enter")){
+			sendMgs();
+			keyboard.active = false;
+		}*/
 
+		/*Event e = Event.current;
+		if (e.type == EventType.keyDown && e.keyCode == KeyCode.Return) {
+			sendMgs();
+		}*/
 	}
-	
+
 	void OnGUI(){
 		/*GUI.skin.textField.fontSize = GUI.skin.button.fontSize = GUI.skin.label.fontSize = 10;
 		displayChat(new Rect(0, Screen.height * 0.1f, Screen.width, Screen.height*0.8f),sc,sp);*/
@@ -179,21 +189,25 @@ public class chatTest : MonoBehaviour {
 	
 	public void sendMgs(){
 		MgsTextNotif = Mgs.text;
-		Debug.Log (Mgs.text);
-		sc.message = Mgs.text;
-		sc.sendMessage();
-		sc.message = "";
-		Mgs.text = "";
+
+		if (MgsTextNotif != "") {
+
+			Debug.Log (Mgs.text);
+			sc.message = Mgs.text;
+			sc.sendMessage ();
+			sc.message = "";
+			Mgs.text = "";
 		
-		/*sync para notificaciones*/
-		string[] fields = {"usuarios_id", "amigos_id", "texto", "perros_id"};
-		string[] values = {GMS.userData.id.ToString(), amigoData.id.ToString(), MgsTextNotif, GMS.perro.id.ToString()};
-		GMS.insert_sync(fields, values, "notificacion_chat");
+			/*sync para notificaciones*/
+			string[] fields = {"usuarios_id", "amigos_id", "texto", "perros_id"};
+			string[] values = {GMS.userData.id.ToString (), amigoData.id.ToString (), MgsTextNotif, GMS.perro.id.ToString ()};
+			GMS.insert_sync (fields, values, "notificacion_chat");
 		
-		Debug.Log ("mgs enviado..");
+			Debug.Log ("mgs enviado..");
+		}
 	}
 
-	#region API Calls
+	/*#region API Calls
 	private string ScheduleLocalNotification(CrossPlatformNotification _notification)
 	{
 		return NPBinding.NotificationService.ScheduleLocalNotification(_notification);
@@ -235,7 +249,7 @@ public class chatTest : MonoBehaviour {
 	}
 	
 	#endregion
-
+*/
 
 	public void goBack() {
 		Application.LoadLevel("ranking");
