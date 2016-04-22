@@ -8,6 +8,7 @@ using VoxelBusters.AssetStoreProductUtility.Demo;
 public class ImagePickerMascota : MonoBehaviour {
 	public Texture2D image;
 	public GameObject imageTexture;
+	public GameObject iconoCamara;
 
 	private MainController GMS;
 	
@@ -67,6 +68,7 @@ public class ImagePickerMascota : MonoBehaviour {
 		Sprite sprite = GMS.spriteFromFile (GMS.perro.temp_img);
 		GameObject.Find ("backImage").GetComponent<Image>().sprite = sprite;
 		GMS.showLoading (false);
+		iconoCamara.SetActive (false);
 	}
 
 
