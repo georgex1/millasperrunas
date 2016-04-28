@@ -49,8 +49,8 @@ public class puntos : MonoBehaviour {
 			}
 			latList = latList.Remove(latList.Length - 1);
 
-			URLGmaps = "https://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=" + Screen.width + "x" + mapH + "&path=color:0x0000ff|weight:5|"+latList;
-			URLGmapsShare = "https://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=400x400&path=color:0x0000ff|weight:5|"+latList;
+			URLGmaps = "https://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=" + Screen.width + "x" + mapH + "&path=color:0x00CC00|weight:5|"+latList;
+			URLGmapsShare = "https://maps.googleapis.com/maps/api/staticmap?maptype=satellite&size=400x400&path=color:0x00CC00|weight:5|"+latList;
 
 			Debug.Log(URLGmaps);
 
