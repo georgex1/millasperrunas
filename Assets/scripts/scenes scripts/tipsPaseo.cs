@@ -26,13 +26,13 @@ public class tipsPaseo : MonoBehaviour {
 		GPSC = GPS_.GetComponent<gpsController>();*/
 
 		if (GMS.userData.foto != "") {
-			Sprite sprite_ = GMS.spriteFromFile ( GMS.userData.foto );
+			Sprite sprite_ = GMS.spriteSquareFromFile ( GMS.userData.foto );
 			UserFoto.GetComponent<Image> ().sprite = sprite_;
 		}
 		UserNombre.GetComponent<Text> ().text = GMS.userData.nombre;
 
 		if (GMS.perro.foto != "") {
-			Sprite sprite_ = GMS.spriteFromFile ( GMS.perro.foto );
+			Sprite sprite_ = GMS.spriteSquareFromFile ( GMS.perro.foto );
 			PerroFoto.GetComponent<Image> ().sprite = sprite_;
 		}
 		PerroNombre.GetComponent<Text> ().text = GMS.perro.nombre;

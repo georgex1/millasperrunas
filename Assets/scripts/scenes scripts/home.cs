@@ -50,7 +50,8 @@ public class home : MonoBehaviour {
 
 		Debug.Log ("km perro: "+GMS.perro.kilometros+ " | puntos perro: "+GMS.perro.puntos);
 
-		indPuntos.GetComponent<Text>().text = float.Parse( GMS.perro.puntos ).ToString("n2")+ " PTS.";
+		//indPuntos.GetComponent<Text>().text = float.Parse( GMS.perro.puntos ).ToString("n2")+ " PTS.";
+		indPuntos.GetComponent<Text>().text = GMS.perro.puntos + " PTS.";
 		indKm.GetComponent<Text>().text = float.Parse( GMS.perro.kilometros ).ToString("n2")+ " KM";
 
 		GMS.db.OpenDB("millasperrunas.db");
@@ -62,7 +63,8 @@ public class home : MonoBehaviour {
 			Debug.Log("famKm: " + ((string[])resultF [0]) [0] + " | famPuntos: " + ((string[])resultF [0]) [1]);
 
 			famKm.GetComponent<Text>().text = float.Parse( ((string[])resultF [0]) [0] ).ToString("n2")+ " KM";
-			famPuntos.GetComponent<Text>().text = float.Parse( ((string[])resultF [0]) [1] ).ToString("n2")+ " PTS.";
+			//famPuntos.GetComponent<Text>().text = float.Parse( ((string[])resultF [0]) [1] ).ToString("n2")+ " PTS.";
+			famPuntos.GetComponent<Text>().text = ((string[])resultF [0]) [1] + " PTS.";
 
 			/*foreach (string[] row2_ in resultF) {
 				famKm.GetComponent<Text>().text = float.Parse( row2_[0] ).ToString("n2")+ " KM";

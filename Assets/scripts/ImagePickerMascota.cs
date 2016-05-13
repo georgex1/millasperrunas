@@ -11,6 +11,7 @@ public class ImagePickerMascota : MonoBehaviour {
 	public GameObject iconoCamara;
 
 	private MainController GMS;
+	public GameObject PanelIcosUpd;
 	
 	internal void Start() {
 
@@ -67,6 +68,7 @@ public class ImagePickerMascota : MonoBehaviour {
 		yield return new WaitForSeconds(2);
 		Sprite sprite = GMS.spriteFromFile (GMS.perro.temp_img);
 		GameObject.Find ("backImage").GetComponent<Image>().sprite = sprite;
+		PanelIcosUpd.SetActive (false);
 		GMS.showLoading (false);
 		iconoCamara.SetActive (false);
 	}

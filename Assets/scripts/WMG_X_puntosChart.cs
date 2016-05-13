@@ -34,7 +34,7 @@ public class WMG_X_puntosChart : MonoBehaviour {
 
 		GMS.db.OpenDB("millasperrunas.db");
 
-		ArrayList result = GMS.db.BasicQueryArray ("select puntos, kilometros from paseos where perros_id = '"+GMS.perro.id.ToString()+"' and usuarios_id = '"+GMS.userData.id.ToString()+"' order by fecha_entrada DESC limit 10 ");
+		ArrayList result = GMS.db.BasicQueryArray ("select puntos, kilometros, fecha_entrada from paseos where perros_id = '"+GMS.perro.id.ToString()+"' and usuarios_id = '"+GMS.userData.id.ToString()+"' order by fecha_entrada DESC limit 10 ");
 
 		GMS.db.CloseDB();
 
@@ -88,7 +88,8 @@ public class WMG_X_puntosChart : MonoBehaviour {
 				Debug.Log("calc puntos: " + calcPuntos);
 
 				chartData.Add(new Vector2 (posX, calcPuntos ));
-				chartLabels.Add(row_[0]+ " Pts" + System.Environment.NewLine + kmsA + " Km");
+
+				chartLabels.Add(row_[0]+ " Pts" + System.Environment.NewLine + kmsA + " Km" + System.Environment.NewLine + GMS.userData.formatDate2( row_[2] ) );
 
 				if(!hasCKM){
 					ciudadKm.text = kmsA + " KMS";

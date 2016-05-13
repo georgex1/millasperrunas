@@ -12,6 +12,7 @@ public class ImagePickerPerfil : MonoBehaviour {
 	private MainController GMS;
 
 	public GameObject loadingF;
+	public GameObject PanelIcosUpd;
 	
 	internal void Start() {
 		
@@ -67,6 +68,7 @@ public class ImagePickerPerfil : MonoBehaviour {
 		yield return new WaitForSeconds(1);
 		Sprite sprite = GMS.spriteFromFile (GMS.userData.temp_img);
 		GameObject.Find ("backImage").GetComponent<Image>().sprite = sprite;
+		PanelIcosUpd.SetActive (false);
 		GMS.showLoading (false);
 	}
 	

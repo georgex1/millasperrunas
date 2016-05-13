@@ -85,7 +85,7 @@ public class loginFacebook : MonoBehaviour {
 		Debug.Log ("fbid: " + GMS.userData.fbid + " | nombre: " + GMS.userData.nombre + " | email: " + GMS.userData.email + " | sexo: " + GMS.userData.sexo + "fecha nacimiento: " + GMS.userData.fecha_nacimiento );
 
 		GMS.showLoading(true);
-		FB.API("me/picture?type=large", Facebook.HttpMethod.GET, GetPicture);
+		FB.API("me/picture?type=large&height=400&width=500", Facebook.HttpMethod.GET, GetPicture);
 	}
 
 	private void GetPicture(FBResult result)

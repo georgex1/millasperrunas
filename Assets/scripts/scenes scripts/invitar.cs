@@ -127,6 +127,8 @@ public class invitar : MonoBehaviour
 		form.AddField ("appHash", GMS.appHash);
 		form.AddField ("action", "get_fbuserdata");
 		form.AddField ("fbid", fbid);
+		form.AddField ("uToken", GMS.userData.token);
+		form.AddField ("usuarios_id", GMS.userData.id.ToString());
 		
 		WWW www = new WWW (GMS.responseURL, form);
 		StartCoroutine (WaitForRequestF (www));
@@ -139,11 +141,18 @@ public class invitar : MonoBehaviour
 		yield return www;
 		if (www.error == null) {
 			IDictionary Wresponse = (IDictionary)MiniJSON.Json.Deserialize (www.text);
-			string Wcontent_ = MiniJSON.Json.Serialize (Wresponse ["content"]);
-			IDictionary Wresponse2 = (IDictionary)MiniJSON.Json.Deserialize (Wcontent_);
-			//(string)Wcontent_["email"])
-			email.GetComponent<InputField> ().text = (string)Wresponse2 ["email"];
-			GMS.showLoading (false);
+
+			if((string)Wresponse["status"] != "error"){
+
+				string Wcontent_ = MiniJSON.Json.Serialize (Wresponse ["content"]);
+				IDictionary Wresponse2 = (IDictionary)MiniJSON.Json.Deserialize (Wcontent_);
+				//(string)Wcontent_["email"])
+				email.GetComponent<InputField> ().text = (string)Wresponse2 ["email"];
+				GMS.showLoading (false);
+			}else{
+				GMS.showLoading (false);
+				GMS.errorPopup( "ERROR, por favor intente nuevamente", "");
+			}
 		}
 	}
 

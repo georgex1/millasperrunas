@@ -17,6 +17,7 @@ public class fotoPerfil : MonoBehaviour {
 	public GameObject rotR;
 
 	public GameObject loadingF;
+	public GameObject PanelIcosUpd;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +42,7 @@ public class fotoPerfil : MonoBehaviour {
 			if (File.Exists (filepath)) {
 				GameObject.Find ("backImage").GetComponent<Image>().sprite = GMS.spriteFromFile(GMS.userData.foto);
 				loadingF.SetActive(false);
+				PanelIcosUpd.SetActive(false);
 			}else{//intentar cargar de nuevo en 2 segs....
 				StartCoroutine( tryGetPicture() );
 			}
@@ -66,6 +68,7 @@ public class fotoPerfil : MonoBehaviour {
 		if (File.Exists (filepath)) {
 			GameObject.Find ("backImage").GetComponent<Image> ().sprite = GMS.spriteFromFile (GMS.userData.foto);
 			loadingF.SetActive(false);
+			PanelIcosUpd.SetActive(false);
 		} else {
 			StartCoroutine( tryGetPicture() );
 		}

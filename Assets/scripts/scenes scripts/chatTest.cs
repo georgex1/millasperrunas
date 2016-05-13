@@ -48,8 +48,8 @@ public class chatTest : MonoBehaviour {
 		amigoData.nombre = ((string[])result [0]) [2];
 		amigoData.foto =  ((string[])result [0]) [3];
 
-		amigoImage = GMS.spriteFromFile (((string[])result [0]) [3]);
-		userImage = GMS.spriteFromFile ( GMS.userData.foto );
+		amigoImage = GMS.spriteSquareFromFile (((string[])result [0]) [3]);
+		userImage = GMS.spriteSquareFromFile ( GMS.userData.foto );
 
 		Application.runInBackground = true;
 		//string chatGroup = ((string[])result [0]) [4];

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class notificacionPuntosExtra : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class notificacionPuntosExtra : MonoBehaviour {
 
 	private int lastMotivoKey;
 
+	public Text PuntosDescripcion;
+
 	// Use this for initialization
 	void Start () {
 
@@ -29,6 +32,14 @@ public class notificacionPuntosExtra : MonoBehaviour {
 		/*foreach (string anim_ in anims) {
 			GameObject.Find (anim_).SetActive(false);
 		}*/
+		//get descripcion
+		GMS.db.OpenDB("millasperrunas.db");
+		ArrayList result = GMS.db.BasicQueryArray ("select descripcion from puntos_especiales where motivos_id = '"+GMS.puntosEspecialesMotivoIds[lastMotivoKey]+"' AND fecha_desde < '"+GMS.getActualDate()+"' and fecha_hasta > '"+GMS.getActualDate()+"' and habilitado = '1' ");
+		if (result.Count > 0) {
+			PuntosDescripcion.text = ((string[])result [0]) [0];
+		}
+		GMS.db.CloseDB();
+
 
 		switch (GMS.puntosEspecialesMotivoIds[lastMotivoKey]) {
 		case "1": PanelAnimNoche.SetActive(true); break;

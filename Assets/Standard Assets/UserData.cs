@@ -24,6 +24,8 @@ public class UserData {
 
 	public byte[] ImgBytes;
 	public string temp_img;
+
+	public string token;
 	
 	//public Dictionary<string, int> ExercisesMetricas;
 	
@@ -37,6 +39,7 @@ public class UserData {
 		fbid = "";
 		sexo = "";
 		foto = temp_img = "";
+		token = "";
 		//ExercisesMetricas = new Dictionary<string, int> ();
 	}
 
@@ -61,6 +64,7 @@ public class UserData {
 		fecha_nacimiento = row_ [4];
 		sexo = row_ [5];
 		foto = row_ [6];
+		token = row_ [7];
 	}
 
 	public void format_month(string month_){
@@ -116,6 +120,30 @@ public class UserData {
 				"on perros_usuarios.usuarios_id = familia.id where perros_usuarios.perros_id = '"+perroId+"' and perros_usuarios.aceptado = '1' order by puntos DESC";
 		//Debug.Log (query);
 		return query;
+	}
+
+	public string formatDate(string sqlDate){
+		//yyyy-MM-dd HH:mm:ss
+		if (sqlDate != "") {
+			string[] fdate = sqlDate.Split (' ');
+			string[] fdate2 = fdate [0].Split ('-');
+
+			return fdate2 [2] + "/" + fdate2 [1] + "/" + fdate2 [0] + " " + fdate [1];
+		} else {
+			return " ";
+		}
+	}
+
+	public string formatDate2(string sqlDate){
+		//yyyy-MM-dd HH:mm:ss
+		if (sqlDate != "") {
+			string[] fdate = sqlDate.Split (' ');
+			string[] fdate2 = fdate [0].Split ('-');
+			
+			return fdate2 [2] + "/" + fdate2 [1] + "/" + fdate2 [0] ;
+		} else {
+			return " ";
+		}
 	}
 
 }

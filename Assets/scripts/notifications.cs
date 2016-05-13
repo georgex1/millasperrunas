@@ -119,6 +119,25 @@ public class notifications : MonoBehaviour {
 					}
 				});
 			}
+			else if((string)_userInfo["notifType"] == "rest_puntos"){
+
+				GMS.db.OpenDB("millasperrunas.db");
+
+				ArrayList result = GMS.db.BasicQueryArray ("select puntos, kilometros from perros_usuarios where perros_id = '"+(string)_userInfo["perro_id"]+"' and usuarios_id = '"+(string)_userInfo["usuario_id"]+"' ");
+				if (result.Count > 0) {
+					float restKm = float.Parse(((string[])result [0]) [1]) - float.Parse((string)_userInfo["kilometros"]);
+					int restP = int.Parse(((string[])result [0]) [0]) - int.Parse( (string)_userInfo["puntos"] );
+					//((string[])result [0]) [0]
+					GMS.db.BasicQueryArray ("update perros_usuarios set puntos = '"+restP+"', kilometros = '"+restKm+"' where perros_id = '"+(string)_userInfo["perro_id"]+"' and usuarios_id = '"+(string)_userInfo["usuario_id"]+"' ");
+					GMS.perro.puntos = restP.ToString();
+					GMS.perro.kilometros = restKm.ToString();
+				}
+				GMS.db.CloseDB();
+
+				NPBinding.UI.ShowAlertDialogWithSingleButton ("Purina Walk ", _notification.AlertBody, "Aceptar", (string _buttonPressed)=>{
+
+				});
+			}
 			else{
 				string[] m_buttons = new string[] { "Cerrar", "Ver" };
 				NPBinding.UI.ShowAlertDialogWithMultipleButtons ("Tienes una nueva notificación", _notification.AlertBody, m_buttons, (string _buttonPressed)=>{

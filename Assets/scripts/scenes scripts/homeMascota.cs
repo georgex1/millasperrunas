@@ -36,7 +36,7 @@ public class homeMascota : MonoBehaviour {
 				clone.transform.localScale = new Vector3(1, 1, 1);
 				clone.name = "perro_" + row_[0];
 
-				Sprite sprite_ = GMS.spriteFromFile ( row_[4] );
+				Sprite sprite_ = GMS.spriteSquareFromFile ( row_[4] );
 				clone.transform.Find("PanelImage").GetComponent<Image> ().sprite = sprite_;
 
 				Debug.Log("perro: " + row_[1]);
@@ -44,6 +44,8 @@ public class homeMascota : MonoBehaviour {
 				GMS.perro.populatePerro (row_);
 			}
 			changePerroData ();
+			StartCoroutine ( updatePuntosPerro() );
+
 		}else {
 			Application.LoadLevel ("cargar-invitar");
 		}
@@ -52,6 +54,15 @@ public class homeMascota : MonoBehaviour {
 
 		//populateFamilia ();
 
+	}
+
+	private IEnumerator updatePuntosPerro(){
+		yield return new WaitForSeconds (1);
+
+		TPuntos.GetComponent<Text> ().text = GMS.perro.puntos + " PUNTOS";
+		TKm.GetComponent<Text> ().text = float.Parse( GMS.perro.kilometros ).ToString ("n2") + " KM";
+
+		StartCoroutine ( updatePuntosPerro() );
 	}
 
 	private void populateFamilia(){
@@ -82,7 +93,7 @@ public class homeMascota : MonoBehaviour {
 					clone.transform.localScale = new Vector3(1, 1, 1);
 					clone.name = "familia_" + row_[0];
 					
-					Sprite sprite_ = GMS.spriteFromFile ( row_[3] );
+					Sprite sprite_ = GMS.spriteSquareFromFile ( row_[3] );
 					clone.transform.Find("PanelImage").GetComponent<Image> ().sprite = sprite_;
 					//clone.GetComponent<Image> ().sprite = sprite_;
 				}
@@ -97,7 +108,8 @@ public class homeMascota : MonoBehaviour {
 		Sprite sprite_ = GMS.spriteFromFile (GMS.perro.foto);
 		perro_bck.GetComponent<Image> ().sprite = sprite_;
 
-		TPuntos.GetComponent<Text> ().text = float.Parse( GMS.perro.puntos ).ToString ("n2") + " PUNTOS";
+		//TPuntos.GetComponent<Text> ().text = float.Parse( GMS.perro.puntos ).ToString ("n2") + " PUNTOS";
+		TPuntos.GetComponent<Text> ().text = GMS.perro.puntos + " PUNTOS";
 		TKm.GetComponent<Text> ().text = float.Parse( GMS.perro.kilometros ).ToString ("n2") + " KM";
 
 		GMS.paseoPerroId = GMS.perro.id;

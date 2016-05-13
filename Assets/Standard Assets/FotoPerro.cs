@@ -22,12 +22,13 @@ public class FotoPerro{
 	}
 
 	public void pupulateFotoPerro(string[] row_){
+		//id, fecha_entrada, usuarios_id, perros_id, foto, subida, paseos_id
 		id = int.Parse( row_ [0] );
 		fecha_entrada = row_ [1];
 		usuarios_id = row_ [2];
 		perros_id = row_ [3];
 		temp_img = row_ [4];
-		paseos_id = row_ [5];
+		paseos_id = row_ [6];
 	}
 
 }

@@ -29,6 +29,7 @@ public class paseo : MonoBehaviour {
 	private bool showPopupSP = false;
 
 	private float timeToPhoto = 600f; //10 minutos
+	//private float timeToPhoto = 60f; //1 minutos
 
 	//private float charUpdate = 0f;
 
@@ -231,7 +232,14 @@ public class paseo : MonoBehaviour {
 			string valocPart = (GMS.gps_partialVeloc.ToString() == "") ? "0f" : GMS.gps_partialVeloc.ToString();
 			int valocPart_int = (int) Mathf.Round( float.Parse(valocPart) ) ;
 
-			velocityChart.partialVeloc = valocPart_int * 2;
+			int graphPVeloc = valocPart_int * 2;
+
+			if(graphPVeloc > 20){
+				velocityChart.partialVeloc = 20;
+			}else{
+				velocityChart.partialVeloc = graphPVeloc;
+			}
+
 		}
 		//charUpdate += Time.deltaTime;
 
